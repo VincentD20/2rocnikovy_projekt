@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://de6q38bael78t"]
+
+[ext_resource type="Script" uid="uid://d0uslrut03ure" path="res://MainMenu.cs" id="1_i26rj"]
+
+[node name="MainMenu" type="Node2D" unique_id=1379072460]
+position = Vector2(-7.1525574e-07, -4.7683716e-07)
+scale = Vector2(1.2489423, 1.0890644)
+script = ExtResource("1_i26rj")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=893280647]
+offset_right = 26.779823
+offset_bottom = 30.0204
+scale = Vector2(34.443115, 19.820063)
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="." unique_id=1037863598]
+offset_left = 168.94296
+offset_top = 44.074528
+offset_right = 771.943
+offset_bottom = 111.074524
+theme_override_colors/font_color = Color(0.42352942, 1, 1, 1)
+theme_override_font_sizes/font_size = 48
+text = "Záhada zmizelé černé díry"
+
+[node name="Button" type="Button" parent="." unique_id=2055132682]
+offset_left = 403.54147
+offset_top = 215.78156
+offset_right = 449.54147
+offset_bottom = 246.78156
+text = "Hrát
+"
+
+[node name="Button2" type="Button" parent="." unique_id=1530640430]
+offset_left = 389.12927
+offset_top = 375.55173
+offset_right = 445.12927
+offset_bottom = 406.55173
+text = "Konec
+
+"
+
+[connection signal="pressed" from="Button" to="." method="_on_Hrat_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_Konec_pressed"]

@@ -1,3 +1,11 @@
-# Má hra, co ještě neexistuje
+# Záhada ztracené černé díry
 ## Ročníkový projekt na téma Polda(point-and-click adventure)
-- Godot propojený s VS code v jazyce C#
+### Nástroje
+- Godot
+- VS Code
+- Inkscape
+### Story
+### 15.04
+- Vytvořil jsem si hlavní scénu a propojil jsem tlačítka s kódem
+- Tvorba scén
+

@@ -4,6 +4,8 @@
 - Godot
 - VS Code
 - Inkscape
+- Claude
+- Gemini(Nanobanana 2) - generování pozadí
 - https://cloudconvert.com/png-converter
 ### Story
 ### 15.04
@@ -11,3 +13,6 @@
 - Tvorba scén
 ### 28.04
 - Import png souboru
+
+### 29.04
+- 

@@ -15,4 +15,5 @@
 - Import png souboru
 
 ### 29.04
-- 
+- Zhotovení 2 scény - přidání předmětů a jejich scriptu
+- Zlepšení příbehu a scénáře

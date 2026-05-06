@@ -17,3 +17,8 @@
 ### 29.04
 - Zhotovení 2 scény - přidání předmětů a jejich scriptu
 - Zlepšení příbehu a scénáře
+
+### 04.05
+- Zlepšil jsem scenář
+- Propojení scén
+- Tvorba nových scén + pozadí

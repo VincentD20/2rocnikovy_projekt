@@ -17,7 +17,7 @@ public partial class DvereVlevo : Area2D
 	{
 		if (@event is InputEventMouseButton mouseEvent && mouseEvent.Pressed)
 		{
-			GetTree().ChangeSceneToFile("");
+			GetTree().ChangeSceneToFile("res://scenes/Velin.tscn");
 		}
 	}
 }

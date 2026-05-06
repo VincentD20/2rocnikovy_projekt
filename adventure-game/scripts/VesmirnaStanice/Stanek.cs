@@ -12,4 +12,15 @@ public partial class Stanek : Area2D
 	public override void _Process(double delta)
 	{
 	}
+
+	public override void _InputEvent(Viewport viewport, InputEvent @event, int shapeIdx)
+	{
+		if (@event is InputEventMouseButton mouseEvent && mouseEvent.Pressed)
+		{
+			VesmirnaStanice scene = GetParent<VesmirnaStanice>();
+			scene.ShowDialog("Našel jsi starou vesmírnou minci. Možná se hodí do automatů.");
+
+
+		}
+	}
 }

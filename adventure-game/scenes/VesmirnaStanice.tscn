@@ -18,13 +18,13 @@ size = Vector2(167, 221)
 size = Vector2(161, 165)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_svt1p"]
-size = Vector2(78, 183)
+size = Vector2(105, 199)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_31f7w"]
 size = Vector2(232, 345)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8pcxf"]
-size = Vector2(263, 135)
+size = Vector2(208, 71)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ir32r"]
 size = Vector2(374, 237)
@@ -68,7 +68,7 @@ debug_color = Color(0.77060026, 0.42477906, 0.36545295, 0.41960785)
 script = ExtResource("5_1bfqm")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Dvere_vlevo" unique_id=1878753015]
-position = Vector2(522, 680.5)
+position = Vector2(521.5, 672.5)
 shape = SubResource("RectangleShape2D_svt1p")
 debug_color = Color(0.9031663, 0.00015729129, 0.7595976, 0.41960785)
 
@@ -84,7 +84,7 @@ debug_color = Color(0.49939555, 0.47767115, 0.86740446, 0.41960785)
 script = ExtResource("7_owemq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sachta" unique_id=280222713]
-position = Vector2(441.5, 914.5)
+position = Vector2(440, 930.5)
 shape = SubResource("RectangleShape2D_8pcxf")
 debug_color = Color(0.08274739, 0.52424127, 0.9999998, 0.41960785)
 

@@ -19,9 +19,9 @@ public partial class FialDvere : Area2D
 		if (@event is InputEventMouseButton mouseEvent && mouseEvent.Pressed)
 		{
 			VesmirnaStanice scene = GetParent<VesmirnaStanice>();
-			if(Inventory.HasItem(""))
+			if(Inventory.HasItem("")) // item karta
 			{
-				GetTree().ChangeSceneToFile("");
+				GetTree().ChangeSceneToFile("res://scenes/VyskumnaLod.tscn");
 			}
 			scene.ShowDialog("Dveře jsou zamčené. Potřebuješ kartu.");
 

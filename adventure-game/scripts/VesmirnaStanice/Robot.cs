@@ -18,7 +18,7 @@ public partial class Robot : Area2D
 		if (@event is InputEventMouseButton mouseEvent && mouseEvent.Pressed)
 		{
 			VesmirnaStanice scene = GetParent<VesmirnaStanice>();
-			scene.ShowDialog("Já jsem robot HAL- 9001. Neviděl jsem žádnou černou díru. Opravdu.");
+			scene.ShowDialog("");
 		}
 	}
 }

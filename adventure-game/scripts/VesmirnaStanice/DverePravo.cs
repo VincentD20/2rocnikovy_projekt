@@ -16,7 +16,7 @@ public partial class DverePravo : Area2D
 	{
 		if (@event is InputEventMouseButton mouseEvent && mouseEvent.Pressed)
 		{
-			GetTree().ChangeSceneToFile("");
+			GetTree().ChangeSceneToFile("res://scenes/Vesmir.tscn");
 		}
 	}
 }

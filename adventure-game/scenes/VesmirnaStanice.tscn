@@ -1,0 +1,149 @@
+[gd_scene format=3 uid="uid://cr5plfegdh87k"]
+
+[ext_resource type="Texture2D" uid="uid://cxv1cibe8i1lo" path="res://assets/vesmirnaStanice (1).png" id="1_bk8yt"]
+[ext_resource type="Script" uid="uid://cghd43dh4xux2" path="res://scripts/VesmirnaStanice/VesmirnaStanice.cs" id="1_eg2n4"]
+[ext_resource type="Script" uid="uid://ts0kwcals2j5" path="res://scripts/VesmirnaStanice/Robot.cs" id="2_e0qey"]
+[ext_resource type="Script" uid="uid://civpmpjm12ksl" path="res://scripts/VesmirnaStanice/FialDvere.cs" id="4_i8llv"]
+[ext_resource type="Script" uid="uid://4r3i3no8dill" path="res://scripts/VesmirnaStanice/DvereVlevo.cs" id="5_1bfqm"]
+[ext_resource type="Script" uid="uid://mbskfmth78tt" path="res://scripts/VesmirnaStanice/DverePravo.cs" id="6_6lpwp"]
+[ext_resource type="Script" uid="uid://b77py8a0v4om3" path="res://scripts/VesmirnaStanice/Sachta.cs" id="7_owemq"]
+[ext_resource type="Script" uid="uid://bt7psgrwp4otw" path="res://scripts/VesmirnaStanice/Pocitac.cs" id="8_styyq"]
+[ext_resource type="Script" uid="uid://cjd8xmjapvyvq" path="res://scripts/VesmirnaStanice/Stanek.cs" id="9_5tmqs"]
+[ext_resource type="Script" uid="uid://byyp0l0sgiduq" path="res://scripts/VesmirnaStanice/Automat.cs" id="10_prhow"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bk8yt"]
+size = Vector2(167, 221)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eg2n4"]
+size = Vector2(161, 165)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_svt1p"]
+size = Vector2(105, 199)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_31f7w"]
+size = Vector2(232, 345)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8pcxf"]
+size = Vector2(208, 71)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ir32r"]
+size = Vector2(374, 237)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ckmqw"]
+size = Vector2(149, 208)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lbkm8"]
+size = Vector2(156, 277)
+
+[node name="VesmirnáStanice" type="Node2D" unique_id=814475414]
+script = ExtResource("1_eg2n4")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1008369544]
+offset_top = 8.0
+offset_right = 62.65426
+offset_bottom = 186.21184
+scale = Vector2(30.596481, 6.0321474)
+texture = ExtResource("1_bk8yt")
+expand_mode = 1
+metadata/_edit_use_anchors_ = true
+metadata/_edit_lock_ = true
+
+[node name="Robot" type="Area2D" parent="." unique_id=1212057514]
+script = ExtResource("2_e0qey")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Robot" unique_id=686505810]
+position = Vector2(307.5, 750.5)
+shape = SubResource("RectangleShape2D_bk8yt")
+debug_color = Color(3.1766297e-06, 0.62924474, 0.4876414, 0.41960785)
+
+[node name="Fial_dvere" type="Area2D" parent="." unique_id=1318748113]
+script = ExtResource("4_i8llv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Fial_dvere" unique_id=1822704838]
+position = Vector2(1002.5, 640.5)
+shape = SubResource("RectangleShape2D_eg2n4")
+debug_color = Color(0.77060026, 0.42477906, 0.36545295, 0.41960785)
+
+[node name="Dvere_vlevo" type="Area2D" parent="." unique_id=1251390593]
+script = ExtResource("5_1bfqm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Dvere_vlevo" unique_id=1878753015]
+position = Vector2(521.5, 672.5)
+shape = SubResource("RectangleShape2D_svt1p")
+debug_color = Color(0.9031663, 0.00015729129, 0.7595976, 0.41960785)
+
+[node name="Dvere_pravo" type="Area2D" parent="." unique_id=752449677]
+script = ExtResource("6_6lpwp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Dvere_pravo" unique_id=1005010287]
+position = Vector2(1645, 692.5)
+shape = SubResource("RectangleShape2D_31f7w")
+debug_color = Color(0.49939555, 0.47767115, 0.86740446, 0.41960785)
+
+[node name="Sachta" type="Area2D" parent="." unique_id=1150922913]
+script = ExtResource("7_owemq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sachta" unique_id=280222713]
+position = Vector2(440, 930.5)
+shape = SubResource("RectangleShape2D_8pcxf")
+debug_color = Color(0.08274739, 0.52424127, 0.9999998, 0.41960785)
+
+[node name="Pocitac" type="Area2D" parent="." unique_id=821426191]
+script = ExtResource("8_styyq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pocitac" unique_id=1948060194]
+position = Vector2(1362, 964.5)
+shape = SubResource("RectangleShape2D_ir32r")
+debug_color = Color(6.738305e-07, 0.6122189, 0.6204273, 0.41960785)
+
+[node name="Stanek" type="Area2D" parent="." unique_id=1319723568]
+script = ExtResource("9_5tmqs")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Stanek" unique_id=116621553]
+position = Vector2(673.5, 648)
+shape = SubResource("RectangleShape2D_ckmqw")
+debug_color = Color(0.48340082, 0.58458287, 0.14401871, 0.41960785)
+
+[node name="Automat" type="Area2D" parent="." unique_id=1001025149]
+script = ExtResource("10_prhow")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Automat" unique_id=327663718]
+position = Vector2(1840, 806.5)
+shape = SubResource("RectangleShape2D_lbkm8")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=281622702]
+
+[node name="Panel" type="Panel" parent="CanvasLayer" unique_id=1826101816]
+anchors_preset = -1
+anchor_right = 0.021000002
+anchor_bottom = 0.062000003
+offset_top = 880.0
+offset_right = 1879.68
+offset_bottom = 1013.04
+metadata/_edit_lock_ = true
+
+[node name="Label" type="Label" parent="CanvasLayer/Panel" unique_id=1021603243]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.044000003
+anchor_top = -0.28300002
+anchor_right = -0.044000003
+anchor_bottom = -0.28300002
+offset_left = 97.48
+offset_top = 68.600006
+offset_right = 1990.48
+offset_bottom = 240.6
+theme_override_font_sizes/font_size = 30
+text = "..."
+horizontal_alignment = 1
+autowrap_mode = 2
+metadata/_edit_lock_ = true
+
+[connection signal="input_event" from="Robot" to="Robot" method="_on_input_event"]
+[connection signal="input_event" from="Fial_dvere" to="." method="_on_fial_dvere_input_event"]
+[connection signal="input_event" from="Dvere_vlevo" to="." method="_on_dvere_vlevo_input_event"]
+[connection signal="input_event" from="Dvere_pravo" to="." method="_on_dvere_pravo_input_event"]
+[connection signal="input_event" from="Sachta" to="." method="_on_sachta_input_event"]
+[connection signal="input_event" from="Pocitac" to="." method="_on_pocitac_input_event"]
+[connection signal="input_event" from="Stanek" to="." method="_on_stanek_input_event"]
+[connection signal="input_event" from="Automat" to="." method="_on_automat_input_event"]

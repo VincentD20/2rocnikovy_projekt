@@ -22,3 +22,7 @@
 - Zlepšil jsem scenář
 - Propojení scén
 - Tvorba nových scén + pozadí
+
+### 12.05
+- vytvoření InventoryManager, DialogManager
+- tvorba pozadí pro scény

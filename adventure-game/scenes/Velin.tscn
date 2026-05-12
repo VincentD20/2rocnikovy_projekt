@@ -1,3 +1,10 @@
 [gd_scene format=3 uid="uid://bgx7j2gp3c564"]
 
+[ext_resource type="Texture2D" uid="uid://j8nrosau7qbl" path="res://assets/velin.jpg" id="1_5iqxq"]
+
 [node name="Velin" type="Node2D" unique_id=2078515005]
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=786614888]
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("1_5iqxq")

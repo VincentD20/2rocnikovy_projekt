@@ -17,9 +17,24 @@ public partial class Stanek : Area2D
 	{
 		if (@event is InputEventMouseButton mouseEvent && mouseEvent.Pressed)
 		{
-			VesmirnaStanice scene = GetParent<VesmirnaStanice>();
-			scene.ShowDialog("Našel jsi starou vesmírnou minci. Možná se hodí do automatů.");
+			var dialogManager = Engine.GetSingleton("DialogManager") as DialogManager;
 
+			if (!Inventory.HasItem("GalacticTea"))
+			{
+				dialogManager?.ShowDialog("Hledáš něco, že by kartu?");
+				dialogManager?.ShowDialog("Možná mám co hledáš, ale nebude to zadarmo.");
+				dialogManager?.ShowDialog("Žížním po čaji, přines mi ho a já ti dám po čem žádáš.");
+			
+			}
+			else if (!Inventory.HasItem("Card"))
+			{
+				dialogManager?.ShowDialog("Děkuji, zde máš to co jsi hledal.");
+				Inventory.RemoveItem("GalacticTea");
+				Inventory.AddItem("Card");}
+			else
+			{
+				dialogManager?.ShowDialog("Už mám co chci, zmizni.");
+			}
 
 		}
 	}

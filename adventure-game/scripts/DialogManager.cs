@@ -1,4 +1,5 @@
 using Godot;
+using System.Collections.Generic;
 
 public partial class DialogManager : CanvasLayer
 {
@@ -9,6 +10,8 @@ public partial class DialogManager : CanvasLayer
 	
 	private string fullText = "";
 	private int currentIndex = 0;
+
+	private Queue<string> dialogQueue = new Queue<string>();
 
 	public override void _Ready()
 	{
@@ -40,10 +43,6 @@ public partial class DialogManager : CanvasLayer
 
 	private void OnTimerTimeout()
 	{
-		// append one character to label.Text
-		// play the sound
-		// increment currentIndex
-		// if currentIndex >= fullText.Length, stop timer and optionally hide panel
 		if(currentIndex < fullText.Length)
 		{
 			label.Text += fullText[currentIndex];
@@ -58,8 +57,6 @@ public partial class DialogManager : CanvasLayer
 
 	public void HideDialog()
 	{
-		// hide the panel
-		// stop the timer
 		panel.Visible = false;
 		timer.Stop();
 	}
@@ -70,7 +67,11 @@ public partial class DialogManager : CanvasLayer
 		if (@event is InputEventMouseButton mouseEvent && mouseEvent.Pressed)
 		{
 			if (label.Text == fullText) {
-				HideDialog();
+				if (dialogQueue.Count > 0) {
+					ShowDialog(dialogQueue.Dequeue());
+				} else {
+					HideDialog();
+				}
 			} else {
 				timer.Stop();
 				label.Text = fullText;
@@ -78,4 +79,16 @@ public partial class DialogManager : CanvasLayer
 
 		}
 	}
+
+	public void ShowDialogSequence(string[] interactions)
+	{
+    	dialogQueue.Clear();
+		foreach(string interaction in interactions)
+		{
+			dialogQueue.Enqueue(interaction);
+		}
+		ShowDialog(dialogQueue.Dequeue());
+	}
+
+
 }

@@ -17,8 +17,8 @@ public partial class Robot : Area2D
 	{
 		if (@event is InputEventMouseButton mouseEvent && mouseEvent.Pressed)
 		{
-			VesmirnaStanice scene = GetParent<VesmirnaStanice>();
-			scene.ShowDialog("");
+			var dialogManager = Engine.GetSingleton("DialogManager") as DialogManager;
+			dialogManager?.ShowDialog("TEXT");
 		}
 	}
 }

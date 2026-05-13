@@ -1,32 +1,53 @@
 using Godot;
 using System;
 
-public partial class InventoryUI : CanvasLayer
+public partial class InventoryManager : CanvasLayer
 {
 	private Panel panel;
-	private List<string> inventoryItems;
-	private Label itemLabel;
+	private ItemList itemList;
 
 	public override void _Ready()
 	{
 		panel = GetNode<Panel>("Panel");
-		itemLabel = GetNode<Label>("Panel/ItemLabel");
-		inventoryItems = Inventory.Items;
+		itemList = panel.GetNode<ItemList>("ItemList");
 		panel.Visible = false;
 
 	}
 
+	public void ShowInventory()
+	{
+		UpdateInventory();
+		panel.Visible = true;
+	}
+
+	public void HideInventory()
+	{
+		panel.Visible = false;
+	}
+
+
+
 	public void UpdateInventory()
 	{
-		foreach (Node child in panel.GetChildren())
+		itemList.Clear();
+		foreach (string item in Inventory.Items)
 		{
-			child.QueueFree();
+			itemList.AddItem(item);
 		}
+	}
 
-		foreach (string item in inventoryItems)
+	public override void _Input(InputEvent @event)
+	{
+		if (@event is InputEventKey keyEvent && keyEvent.Pressed)
 		{
-			itemLabel.Text = item;
-			panel.AddChild(itemLabel);
+			if (keyEvent.Keycode == Key.I)
+			{
+				if (panel.Visible)
+					HideInventory();
+				else
+					ShowInventory();
+			}
+
 		}
 	}
 

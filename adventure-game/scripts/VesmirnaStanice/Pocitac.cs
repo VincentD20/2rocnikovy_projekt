@@ -17,8 +17,8 @@ public partial class Pocitac : Area2D
 	{
 		if (@event is InputEventMouseButton mouseEvent && mouseEvent.Pressed)
 		{
-			VesmirnaStanice scene = GetParent<VesmirnaStanice>();
-			scene.ShowDialog("Databáze černých děr: Poslední záznam - Černá díra č.42 se odpojila od sítě. Důvod: Dovolená.");
+			var dialogManager = Engine.GetSingleton("DialogManager") as DialogManager;
+			dialogManager?.ShowDialog("TEXT");
 		}
 	}
 }

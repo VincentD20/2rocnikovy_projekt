@@ -17,9 +17,20 @@ public partial class Automat : Area2D
 	{
 		if (@event is InputEventMouseButton mouseEvent && mouseEvent.Pressed)
 		{
-			VesmirnaStanice scene = GetParent<VesmirnaStanice>();
-			scene.ShowDialog("Našel jsi starou vesmírnou minci. Možná se hodí do automatů.");
+			var dialogManager = Engine.GetSingleton("DialogManager") as DialogManager;
+			if (!Inventory.HasItem("Coin"))
+			{
+				Inventory.AddItem("Coin");
+				dialogManager?.ShowDialog("Našel jsi starou vesmírnou minci.");
+			}
+			else
+			{
+				dialogManager?.ShowDialog("Automat je prázdný.");
+			}
+
+
+
 		}
-		// přidání mince do inventáře
+
 	}
 }

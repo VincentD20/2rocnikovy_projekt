@@ -18,7 +18,15 @@ public partial class Pocitac : Area2D
 		if (@event is InputEventMouseButton mouseEvent && mouseEvent.Pressed)
 		{
 			var dialogManager = Engine.GetSingleton("DialogManager") as DialogManager;
-			dialogManager?.ShowDialog("TEXT");
+			dialogManager?.ShowDialogSequence(new string[]
+			{
+				"PŘÍSTUP POVOLEN. Vítej, kapitáne Vendo.",
+				"Databáze černých děr — poslední záznam:",
+				"Černá díra č.42 se odpojila od sítě.",
+				"Důvod: Dovolená.",
+				"Poznámka: Černé díry nemají dovolené.",
+				"Druhá poznámka: Tato černá díra si to nemyslí."
+			});
 		}
 	}
 }

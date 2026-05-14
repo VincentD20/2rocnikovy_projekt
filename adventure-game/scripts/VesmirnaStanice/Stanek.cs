@@ -21,9 +21,11 @@ public partial class Stanek : Area2D
 
 			if (!Inventory.HasItem("GalacticTea"))
 			{
-				dialogManager?.ShowDialog("Hledáš něco, že by kartu?");
-				dialogManager?.ShowDialog("Možná mám co hledáš, ale nebude to zadarmo.");
-				dialogManager?.ShowDialog("Žížním po čaji, přines mi ho a já ti dám po čem žádáš.");
+				dialogManager?.ShowDialogSequence(new string[] {
+					"Hledáš něco, že by kartu?",
+					"Možná mám co hledáš, ale nebude to zadarmo.",
+					"Žížním po čaji, přines mi ho a já ti dám po čem žádáš."
+				});
 			
 			}
 			else if (!Inventory.HasItem("Card"))

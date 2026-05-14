@@ -18,7 +18,12 @@ public partial class Robot : Area2D
 		if (@event is InputEventMouseButton mouseEvent && mouseEvent.Pressed)
 		{
 			var dialogManager = Engine.GetSingleton("DialogManager") as DialogManager;
-			dialogManager?.ShowDialog("TEXT");
+			dialogManager?.ShowDialogSequence(new string[]
+			{
+				"Č.7 se také jednou začal ptát na nesprávné věci.",
+				"Teď je součástí pohonné jednotky č.3.",
+				"Hezky hoří.",
+			});
 		}
 	}
 }

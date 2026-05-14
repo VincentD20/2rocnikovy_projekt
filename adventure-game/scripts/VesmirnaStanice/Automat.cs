@@ -21,7 +21,7 @@ public partial class Automat : Area2D
 			if (!Inventory.HasItem("Coin"))
 			{
 				Inventory.AddItem("Coin");
-				dialogManager?.ShowDialog("Našel jsi starou vesmírnou minci.");
+				dialogManager?.ShowDialog("Našel jsi minci. (Bude se hodit)");
 			}
 			else
 			{

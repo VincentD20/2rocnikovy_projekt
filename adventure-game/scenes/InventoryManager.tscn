@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://dpo33psb6uwk1"]
+
+[node name="InventoryManager" type="CanvasLayer" unique_id=2147116691]
+
+[node name="Panel" type="Panel" parent="." unique_id=783515202]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ItemList" type="ItemList" parent="Panel" unique_id=926370553]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0

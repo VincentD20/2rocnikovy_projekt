@@ -19,12 +19,12 @@ public partial class FialDvere : Area2D
 		if (@event is InputEventMouseButton mouseEvent && mouseEvent.Pressed)
 		{
 			var dialogManager = Engine.GetSingleton("DialogManager") as DialogManager;
-			if(Inventory.HasItem("Card")) // item karta
+			if(Inventory.HasItem("Card"))
 			{
 				GetTree().ChangeSceneToFile("res://scenes/VyskumnaLod.tscn");
 				return;
 			}
-			dialogManager?.ShowDialog("TEXT");
+			dialogManager?.ShowDialog("Dveře jsou zamčené. Potřebuješ kartu.");
 
 		}
 	}

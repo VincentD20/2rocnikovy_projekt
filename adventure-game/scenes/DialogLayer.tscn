@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://bvojfgbwq44dd"]
+
+[ext_resource type="Script" uid="uid://ced04wwfr6qx" path="res://scripts/DialogManager.cs" id="1_ci38l"]
+
+[node name="DialogLayer" type="CanvasLayer" unique_id=1964259255]
+script = ExtResource("1_ci38l")
+
+[node name="Panel" type="Panel" parent="." unique_id=87400498]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="Panel" unique_id=352589919]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Panel" unique_id=915931913]
+
+[node name="Timer" type="Timer" parent="Panel" unique_id=1357375338]

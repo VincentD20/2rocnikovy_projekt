@@ -29,11 +29,6 @@ public partial class DialogManager : CanvasLayer
 
 	public void ShowDialog(string text)
 	{
-		// store the full text
-		// reset currentIndex to 0
-		// clear the label
-		// show the panel
-		// start the timer
 		fullText = text;
 		currentIndex = 0;
 		label.Text = "";

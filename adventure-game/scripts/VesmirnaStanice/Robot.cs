@@ -17,7 +17,7 @@ public partial class Robot : Area2D
 	{
 		if (@event is InputEventMouseButton mouseEvent && mouseEvent.Pressed)
 		{
-			var dialogManager = Engine.GetSingleton("DialogManager") as DialogManager;
+			var dialogManager = GetNode<DialogManager>("/root/DialogManager");
 			dialogManager?.ShowDialogSequence(new string[]
 			{
 				"Č.7 se také jednou začal ptát na nesprávné věci.",

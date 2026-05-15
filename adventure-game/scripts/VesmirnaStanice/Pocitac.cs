@@ -17,7 +17,7 @@ public partial class Pocitac : Area2D
 	{
 		if (@event is InputEventMouseButton mouseEvent && mouseEvent.Pressed)
 		{
-			var dialogManager = Engine.GetSingleton("DialogManager") as DialogManager;
+			var dialogManager = GetNode<DialogManager>("/root/DialogManager");
 			dialogManager?.ShowDialogSequence(new string[]
 			{
 				"PŘÍSTUP POVOLEN. Vítej, kapitáne Vendo.",

@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://cr5plfegdh87k"]
 
-[ext_resource type="Texture2D" uid="uid://cxv1cibe8i1lo" path="res://assets/vesmirnaStanice (1).png" id="1_bk8yt"]
 [ext_resource type="Script" uid="uid://cghd43dh4xux2" path="res://scripts/VesmirnaStanice/VesmirnaStanice.cs" id="1_eg2n4"]
 [ext_resource type="Script" uid="uid://ts0kwcals2j5" path="res://scripts/VesmirnaStanice/Robot.cs" id="2_e0qey"]
+[ext_resource type="Texture2D" uid="uid://b5yl380ju206k" path="res://assets/vesmirnaStanice.png" id="2_i8llv"]
 [ext_resource type="Script" uid="uid://civpmpjm12ksl" path="res://scripts/VesmirnaStanice/FialDvere.cs" id="4_i8llv"]
 [ext_resource type="Script" uid="uid://4r3i3no8dill" path="res://scripts/VesmirnaStanice/DvereVlevo.cs" id="5_1bfqm"]
 [ext_resource type="Script" uid="uid://mbskfmth78tt" path="res://scripts/VesmirnaStanice/DverePravo.cs" id="6_6lpwp"]
@@ -24,7 +24,7 @@ size = Vector2(105, 199)
 size = Vector2(232, 345)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8pcxf"]
-size = Vector2(208, 71)
+size = Vector2(240, 112)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ir32r"]
 size = Vector2(374, 237)
@@ -39,14 +39,13 @@ size = Vector2(156, 277)
 script = ExtResource("1_eg2n4")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1008369544]
-offset_top = 8.0
-offset_right = 62.65426
-offset_bottom = 186.21184
+offset_right = 62.75231
+offset_bottom = 179.04073
 scale = Vector2(30.596481, 6.0321474)
-texture = ExtResource("1_bk8yt")
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource("2_i8llv")
 expand_mode = 1
-metadata/_edit_use_anchors_ = true
-metadata/_edit_lock_ = true
 
 [node name="Robot" type="Area2D" parent="." unique_id=1212057514]
 script = ExtResource("2_e0qey")
@@ -84,7 +83,7 @@ debug_color = Color(0.49939555, 0.47767115, 0.86740446, 0.41960785)
 script = ExtResource("7_owemq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sachta" unique_id=280222713]
-position = Vector2(440, 930.5)
+position = Vector2(440, 912)
 shape = SubResource("RectangleShape2D_8pcxf")
 debug_color = Color(0.08274739, 0.52424127, 0.9999998, 0.41960785)
 

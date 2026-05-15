@@ -17,7 +17,7 @@ public partial class Automat : Area2D
 	{
 		if (@event is InputEventMouseButton mouseEvent && mouseEvent.Pressed)
 		{
-			var dialogManager = Engine.GetSingleton("DialogManager") as DialogManager;
+			var dialogManager = GetNode<DialogManager>("/root/DialogManager");
 			if (!Inventory.HasItem("Coin"))
 			{
 				Inventory.AddItem("Coin");

@@ -26,3 +26,7 @@
 ### 12.05
 - vytvoření InventoryManager, DialogManager
 - tvorba pozadí pro scény
+
+### 13-15.05
+- vylepšení herní mechaniky(inventář, dialog)
+- nové scény

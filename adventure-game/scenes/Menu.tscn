@@ -1,60 +1,71 @@
 [gd_scene format=3 uid="uid://ceeaek5jvl5wo"]
 
+[ext_resource type="Script" uid="uid://b8mhrxpejr426" path="res://scripts/Menu.cs" id="1_xdvgc"]
+
 [node name="Menu" type="CanvasLayer" unique_id=1609432822]
+script = ExtResource("1_xdvgc")
 
 [node name="Panel" type="Panel" parent="." unique_id=874800463]
-offset_left = 576.0
+visible = false
+offset_left = 504.0
 offset_top = 128.0
-offset_right = 1344.0
+offset_right = 1480.0
 offset_bottom = 960.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Panel" unique_id=260291861]
 layout_mode = 0
-offset_left = 192.0
-offset_top = 192.0
-offset_right = 576.0
-offset_bottom = 506.0
-theme_override_constants/separation = 4
+offset_left = 328.0
+offset_top = 204.0
+offset_right = 648.0
+offset_bottom = 720.0
+theme_override_constants/separation = 50
 alignment = 1
 
 [node name="Continue" type="Button" parent="Panel/VBoxContainer" unique_id=756490899]
 layout_mode = 2
 size_flags_vertical = 3
+theme_override_font_sizes/font_size = 20
 text = "Continue"
 
 [node name="Settings" type="Button" parent="Panel/VBoxContainer" unique_id=134585721]
 layout_mode = 2
 size_flags_vertical = 3
+theme_override_font_sizes/font_size = 20
 text = "Settings"
 
 [node name="End" type="Button" parent="Panel/VBoxContainer" unique_id=1014568929]
 layout_mode = 2
 size_flags_vertical = 3
+theme_override_font_sizes/font_size = 20
 text = "End"
 
 [node name="Label" type="Label" parent="Panel" unique_id=1636249602]
 layout_mode = 0
-offset_left = 184.0
-offset_top = 88.0
-offset_right = 560.0
-offset_bottom = 144.0
+offset_left = 264.0
+offset_top = 64.0
+offset_right = 712.0
+offset_bottom = 147.0
+theme_override_colors/font_color = Color(0.43137255, 1, 1, 1)
 theme_override_font_sizes/font_size = 60
 text = "Paused"
 horizontal_alignment = 1
 
 [node name="Panel2" type="Panel" parent="." unique_id=2103362401]
-visible = false
-offset_left = 576.0
+offset_left = 504.0
 offset_top = 128.0
-offset_right = 1344.0
+offset_right = 1480.0
 offset_bottom = 960.0
 
 [node name="Volume" type="HSlider" parent="Panel2" unique_id=781794985]
 layout_mode = 0
 offset_left = 96.0
 offset_top = 240.0
-offset_right = 680.0
+offset_right = 880.0
 offset_bottom = 312.0
+step = 10.0
+tick_count = 10
+ticks_on_borders = true
+ticks_position = 3
 
 [node name="Shortcuts" type="Label" parent="Panel2" unique_id=365206313]
 layout_mode = 0
@@ -76,34 +87,40 @@ theme_override_colors/font_color = Color(0, 1, 1, 1)
 theme_override_font_sizes/font_size = 30
 text = "Volume:"
 
-[node name="Zpet" type="Button" parent="Panel2" unique_id=275369633]
+[node name="Back" type="Button" parent="Panel2" unique_id=275369633]
 layout_mode = 0
-offset_left = 248.0
-offset_top = 640.0
-offset_right = 520.0
-offset_bottom = 705.0
+offset_left = 328.0
+offset_top = 624.0
+offset_right = 648.0
+offset_bottom = 712.0
 theme_override_colors/font_color = Color(0.4627451, 0.80784315, 0.8745098, 1)
 theme_override_font_sizes/font_size = 30
 text = "Back"
 
-[node name="Label" type="Label" parent="Panel2" unique_id=263254722]
+[node name="Nazev" type="Label" parent="Panel2" unique_id=263254722]
 layout_mode = 0
-offset_left = 216.0
-offset_top = 64.0
-offset_right = 544.0
-offset_bottom = 133.0
+offset_left = 264.0
+offset_top = 72.0
+offset_right = 712.0
+offset_bottom = 176.0
 theme_override_colors/font_color = Color(0.34117648, 0.46666667, 1, 1)
-theme_override_font_sizes/font_size = 50
+theme_override_font_sizes/font_size = 60
 text = "Settings"
 horizontal_alignment = 1
 
-[node name="Label" type="Label" parent="Panel2/Label" unique_id=421123213]
+[node name="Zkratky" type="Label" parent="Panel2" unique_id=421123213]
 layout_mode = 0
-offset_left = -120.0
-offset_top = 352.0
-offset_right = 464.0
-offset_bottom = 453.0
+offset_left = 96.0
+offset_top = 416.0
+offset_right = 992.0
+offset_bottom = 517.0
 theme_override_font_sizes/font_size = 30
-text = "    I                	                               Inventář
-    Esc           	                               Paused"
+text = "    I                	                                              Inventář
+    Esc           	                                              Paused"
 autowrap_trim_flags = 0
+
+[connection signal="pressed" from="Panel/VBoxContainer/Continue" to="." method="_on_continue_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/Settings" to="." method="_on_setting_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/End" to="." method="_on_end_pressed"]
+[connection signal="changed" from="Panel2/Volume" to="." method="_on_volume_changed"]
+[connection signal="pressed" from="Panel2/Back" to="." method="_on_back_pressed"]

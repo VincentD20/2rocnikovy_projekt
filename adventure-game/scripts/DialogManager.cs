@@ -15,25 +15,34 @@ public partial class DialogManager : CanvasLayer
 
 	public override void _Ready()
 	{
-		// get references to your child nodes
-		// hide the panel on start
-		// connect the timer's Timeout signal to a method
 		panel = GetNode<Panel>("Panel");
 		label = panel.GetNode<Label>("Label");
 		audioPlayer = GetNode<AudioStreamPlayer>("AudioStreamPlayer");
 		timer = GetNode<Timer>("Timer");
 		HideDialog();
 		timer.Timeout += OnTimerTimeout;
-		timer.WaitTime = 0.05f;
+		timer.WaitTime = 0.03f;
+
+		GetTree().NodeRemoved += (node) => {
+			if (node.SceneFilePath != "" && node != this)
+				HideDialog();
+		};
 	}
 
-	public void ShowDialog(string text)
+	private void DisplayLine(string text)
 	{
 		fullText = text;
 		currentIndex = 0;
 		label.Text = "";
 		panel.Visible = true;
 		timer.Start();
+	}
+
+	// public - single line, clears queue
+	public void ShowDialog(string text)
+	{
+		dialogQueue.Clear();
+		DisplayLine(text);
 	}
 
 	private void OnTimerTimeout()
@@ -63,7 +72,7 @@ public partial class DialogManager : CanvasLayer
 		{
 			if (label.Text == fullText) {
 				if (dialogQueue.Count > 0) {
-					ShowDialog(dialogQueue.Dequeue());
+					DisplayLine(dialogQueue.Dequeue());
 				} else {
 					HideDialog();
 				}
@@ -77,12 +86,13 @@ public partial class DialogManager : CanvasLayer
 
 	public void ShowDialogSequence(string[] interactions)
 	{
-    	dialogQueue.Clear();
+		dialogQueue.Clear();
 		foreach(string interaction in interactions)
 		{
 			dialogQueue.Enqueue(interaction);
 		}
-		ShowDialog(dialogQueue.Dequeue());
+		DisplayLine(dialogQueue.Dequeue());
+
 	}
 
 

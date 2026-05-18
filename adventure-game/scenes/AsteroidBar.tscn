@@ -1,3 +1,10 @@
 [gd_scene format=3 uid="uid://bkeqgqva6giva"]
 
+[ext_resource type="Texture2D" uid="uid://osrcjhnpf4ec" path="res://assets/AsteroidBar.jpg" id="1_sac2r"]
+
 [node name="AsteroidBar" type="Node2D" unique_id=539826086]
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=2055708814]
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("1_sac2r")

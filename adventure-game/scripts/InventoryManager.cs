@@ -47,7 +47,6 @@ public partial class InventoryManager : CanvasLayer
 				else
 					ShowInventory();
 			}
-
 		}
 	}
 

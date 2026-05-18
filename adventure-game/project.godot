@@ -18,6 +18,7 @@ config/features=PackedStringArray("4.6", "C#", "GL Compatibility")
 
 DialogManager="*uid://bvojfgbwq44dd"
 InventoryManager="*uid://dpo33psb6uwk1"
+Menu="*uid://ceeaek5jvl5wo"
 
 [display]
 

@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bvojfgbwq44dd"]
 
 [ext_resource type="Script" uid="uid://ced04wwfr6qx" path="res://scripts/DialogManager.cs" id="1_ci38l"]
+[ext_resource type="AudioStream" uid="uid://ced0i7hdh1ipg" path="res://audio/849886__wavewire__ui_textblip_08.wav" id="2_h3pdl"]
 
 [node name="DialogLayer" type="CanvasLayer" unique_id=1964259255]
 script = ExtResource("1_ci38l")
@@ -20,5 +21,6 @@ text = "..."
 horizontal_alignment = 1
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=915931913]
+stream = ExtResource("2_h3pdl")
 
 [node name="Timer" type="Timer" parent="." unique_id=1357375338]

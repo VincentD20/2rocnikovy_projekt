@@ -14,14 +14,14 @@ public static class Inventory
 	public static void AddItem(string item)
 	{
 		Items.Add(item);
-		var inventoryManager = Engine.GetSingleton("InventoryManager") as InventoryManager;
-		inventoryManager?.UpdateInventory();
+		var inventoryManager = Engine.GetMainLoop() as SceneTree;
+		inventoryManager?.Root.GetNode<InventoryManager>("/root/InventoryManager")?.UpdateInventory();
 	}
 
 	public static void RemoveItem(string item)
 	{
 		Items.Remove(item);
-		var inventoryManager = Engine.GetSingleton("InventoryManager") as InventoryManager;
-		inventoryManager?.UpdateInventory();
+		var inventoryManager = Engine.GetMainLoop() as SceneTree;
+		inventoryManager?.Root.GetNode<InventoryManager>("/root/InventoryManager")?.UpdateInventory();
 	}
 }

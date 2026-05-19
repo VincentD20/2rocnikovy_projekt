@@ -2,9 +2,90 @@
 
 [ext_resource type="Texture2D" uid="uid://chxllpkeuieu2" path="res://assets/Vesmir.jpg" id="1_dev6t"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dev6t"]
+size = Vector2(408, 366)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u2q3b"]
+size = Vector2(232, 232)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0iukh"]
+radius = 272.0
+height = 544.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5ei46"]
+radius = 197.8811
+height = 684.4502
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6og8h"]
+radius = 206.16333
+height = 529.9021
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_slg6y"]
+radius = 56.0
+height = 270.6006
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_yy06r"]
+radius = 72.0
+height = 144.0
+
 [node name="Vesmir" type="Node2D" unique_id=1087285887]
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1394411353]
 offset_right = 1920.0
 offset_bottom = 1080.0
 texture = ExtResource("1_dev6t")
+metadata/_edit_lock_ = true
+
+[node name="VesmirnaStanice" type="Area2D" parent="." unique_id=1326593351]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="VesmirnaStanice" unique_id=884674974]
+position = Vector2(204, 433)
+shape = SubResource("RectangleShape2D_dev6t")
+debug_color = Color(0.96853024, 0, 0.470349, 0.41960785)
+
+[node name="Asteroid" type="Area2D" parent="." unique_id=388278073]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Asteroid" unique_id=1191109782]
+position = Vector2(1748, 724)
+shape = SubResource("RectangleShape2D_u2q3b")
+debug_color = Color(0.5637449, 0.53369725, 0.4657467, 0.41960785)
+
+[node name="VesmirnaPlocha" type="Area2D" parent="." unique_id=891896761]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="VesmirnaPlocha" unique_id=167609175]
+position = Vector2(1648, 216)
+shape = SubResource("CapsuleShape2D_0iukh")
+debug_color = Color(0.004202392, 0.5272415, 0.9999998, 0.41960785)
+
+[node name="Alien" type="Area2D" parent="." unique_id=1492331160]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Alien" unique_id=1584881023]
+position = Vector2(1320, 656)
+rotation = 0.2617994
+shape = SubResource("CapsuleShape2D_5ei46")
+debug_color = Color(0.69842035, 0.49358928, 0, 0.41960785)
+
+[node name="Satelit" type="Area2D" parent="." unique_id=1527920935]
+position = Vector2(1328, 664)
+rotation = 0.2617994
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Satelit" unique_id=690545006]
+position = Vector2(-378.94028, -146.92955)
+shape = SubResource("CapsuleShape2D_6og8h")
+debug_color = Color(9.62615e-07, 0.6474548, 0.21899205, 0.41960785)
+
+[node name="Lod" type="Area2D" parent="." unique_id=1767591146]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Lod" unique_id=198783600]
+position = Vector2(423.99997, 191.99997)
+rotation = -1.4687669
+shape = SubResource("CapsuleShape2D_slg6y")
+debug_color = Color(0.52682954, 0.41523182, 1, 0.41960785)
+
+[node name="VyskumnaLod" type="Area2D" parent="." unique_id=841958201]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="VyskumnaLod" unique_id=550317877]
+position = Vector2(624, 536)
+shape = SubResource("CapsuleShape2D_yy06r")
+debug_color = Color(0.9988385, 0, 0.1435459, 0.41960785)

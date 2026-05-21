@@ -33,9 +33,12 @@ public partial class Menu : CanvasLayer
 			{
 				if(!pausePanel.Visible)
 				{
+					if (settingsPanel.Visible) {
+						settingsPanel.Visible = false;
+					}
 					pausePanel.Visible = true;
 					GetTree().Paused = true;
-				} else
+				} else 
 				{
 					pausePanel.Visible = false;
 					GetTree().Paused = false;
@@ -49,21 +52,21 @@ public partial class Menu : CanvasLayer
 		GetTree().Paused = false;
 		pausePanel.Visible = false;
 	}
-    private void _on_setting_pressed()
+	private void _on_setting_pressed()
 	{
 		pausePanel.Visible = false;
 		settingsPanel.Visible = true;
 	}
-    private void _on_end_pressed()
+	private void _on_end_pressed()
 	{
 		GetTree().Quit();
 	}
-    private void _on_back_pressed()
+	private void _on_back_pressed()
 	{
 		pausePanel.Visible = true;
 		settingsPanel.Visible = false;
 	}
-    private void _on_volume_changed(float value)
+	private void _on_volume_changed(float value)
 	{
 		AudioServer.SetBusVolumeDb(0, Mathf.LinearToDb(value));
 	}

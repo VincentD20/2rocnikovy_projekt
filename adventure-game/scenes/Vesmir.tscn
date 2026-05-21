@@ -1,6 +1,13 @@
 [gd_scene format=3 uid="uid://bq021wuv6460p"]
 
 [ext_resource type="Texture2D" uid="uid://chxllpkeuieu2" path="res://assets/Vesmir.jpg" id="1_dev6t"]
+[ext_resource type="Script" uid="uid://c3qwqlufs4e8o" path="res://scripts/Vesmir/VersmirnaStanice.cs" id="2_2glpq"]
+[ext_resource type="Script" uid="uid://dkgjusihunwr0" path="res://scripts/Vesmir/Asteroid.cs" id="3_gwio7"]
+[ext_resource type="Script" uid="uid://gwhtw8s6es6p" path="res://scripts/Vesmir/VesmirnaPlocha.cs" id="4_ikarx"]
+[ext_resource type="Script" uid="uid://dfhxwn26unr01" path="res://scripts/Vesmir/Alien.cs" id="5_i4jpe"]
+[ext_resource type="Script" uid="uid://bg07gbknjy2k2" path="res://scripts/Vesmir/Satelit.cs" id="6_22qk8"]
+[ext_resource type="Script" uid="uid://dbpovf8dehxhj" path="res://scripts/Vesmir/Lod.cs" id="7_nuduk"]
+[ext_resource type="Script" uid="uid://d4dk1bxm1xiiq" path="res://scripts/Vesmir/VyskumnaLod.cs" id="8_vi60j"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dev6t"]
 size = Vector2(408, 366)
@@ -37,6 +44,7 @@ texture = ExtResource("1_dev6t")
 metadata/_edit_lock_ = true
 
 [node name="VesmirnaStanice" type="Area2D" parent="." unique_id=1326593351]
+script = ExtResource("2_2glpq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="VesmirnaStanice" unique_id=884674974]
 position = Vector2(204, 433)
@@ -44,6 +52,7 @@ shape = SubResource("RectangleShape2D_dev6t")
 debug_color = Color(0.96853024, 0, 0.470349, 0.41960785)
 
 [node name="Asteroid" type="Area2D" parent="." unique_id=388278073]
+script = ExtResource("3_gwio7")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Asteroid" unique_id=1191109782]
 position = Vector2(1748, 724)
@@ -51,6 +60,7 @@ shape = SubResource("RectangleShape2D_u2q3b")
 debug_color = Color(0.5637449, 0.53369725, 0.4657467, 0.41960785)
 
 [node name="VesmirnaPlocha" type="Area2D" parent="." unique_id=891896761]
+script = ExtResource("4_ikarx")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="VesmirnaPlocha" unique_id=167609175]
 position = Vector2(1648, 216)
@@ -58,6 +68,7 @@ shape = SubResource("CapsuleShape2D_0iukh")
 debug_color = Color(0.004202392, 0.5272415, 0.9999998, 0.41960785)
 
 [node name="Alien" type="Area2D" parent="." unique_id=1492331160]
+script = ExtResource("5_i4jpe")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Alien" unique_id=1584881023]
 position = Vector2(1320, 656)
@@ -69,6 +80,7 @@ debug_color = Color(0.69842035, 0.49358928, 0, 0.41960785)
 position = Vector2(1328, 664)
 rotation = 0.2617994
 scale = Vector2(0.99999994, 0.99999994)
+script = ExtResource("6_22qk8")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Satelit" unique_id=690545006]
 position = Vector2(-378.94028, -146.92955)
@@ -76,6 +88,7 @@ shape = SubResource("CapsuleShape2D_6og8h")
 debug_color = Color(9.62615e-07, 0.6474548, 0.21899205, 0.41960785)
 
 [node name="Lod" type="Area2D" parent="." unique_id=1767591146]
+script = ExtResource("7_nuduk")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Lod" unique_id=198783600]
 position = Vector2(423.99997, 191.99997)
@@ -84,8 +97,17 @@ shape = SubResource("CapsuleShape2D_slg6y")
 debug_color = Color(0.52682954, 0.41523182, 1, 0.41960785)
 
 [node name="VyskumnaLod" type="Area2D" parent="." unique_id=841958201]
+script = ExtResource("8_vi60j")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="VyskumnaLod" unique_id=550317877]
 position = Vector2(624, 536)
 shape = SubResource("CapsuleShape2D_yy06r")
 debug_color = Color(0.9988385, 0, 0.1435459, 0.41960785)
+
+[connection signal="input_event" from="VesmirnaStanice" to="VesmirnaStanice" method="_on_input_event"]
+[connection signal="input_event" from="Asteroid" to="VesmirnaStanice" method="_on_asteroid_input_event"]
+[connection signal="input_event" from="VesmirnaPlocha" to="VesmirnaStanice" method="_on_vesmirna_plocha_input_event"]
+[connection signal="input_event" from="Alien" to="VesmirnaStanice" method="_on_alien_input_event"]
+[connection signal="input_event" from="Satelit" to="VesmirnaStanice" method="_on_satelit_input_event"]
+[connection signal="input_event" from="Lod" to="VesmirnaStanice" method="_on_lod_input_event"]
+[connection signal="input_event" from="VyskumnaLod" to="VesmirnaStanice" method="_on_vyskumna_lod_input_event"]

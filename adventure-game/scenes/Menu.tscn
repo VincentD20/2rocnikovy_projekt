@@ -6,7 +6,6 @@
 script = ExtResource("1_xdvgc")
 
 [node name="Panel" type="Panel" parent="." unique_id=874800463]
-visible = false
 offset_left = 504.0
 offset_top = 128.0
 offset_right = 1480.0
@@ -14,11 +13,11 @@ offset_bottom = 960.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Panel" unique_id=260291861]
 layout_mode = 0
-offset_left = 328.0
-offset_top = 204.0
-offset_right = 648.0
+offset_left = 312.0
+offset_top = 192.0
+offset_right = 664.0
 offset_bottom = 720.0
-theme_override_constants/separation = 50
+theme_override_constants/separation = 30
 alignment = 1
 
 [node name="Continue" type="Button" parent="Panel/VBoxContainer" unique_id=756490899]
@@ -26,18 +25,28 @@ layout_mode = 2
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 20
 text = "Continue"
+metadata/_edit_lock_ = true
+
+[node name="Save" type="Button" parent="Panel/VBoxContainer" unique_id=1041080538]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 20
+text = "Save"
+metadata/_edit_lock_ = true
 
 [node name="Settings" type="Button" parent="Panel/VBoxContainer" unique_id=134585721]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 20
 text = "Settings"
+metadata/_edit_lock_ = true
 
 [node name="End" type="Button" parent="Panel/VBoxContainer" unique_id=1014568929]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 20
 text = "End"
+metadata/_edit_lock_ = true
 
 [node name="Label" type="Label" parent="Panel" unique_id=1636249602]
 layout_mode = 0
@@ -51,6 +60,7 @@ text = "Paused"
 horizontal_alignment = 1
 
 [node name="Panel2" type="Panel" parent="." unique_id=2103362401]
+visible = false
 offset_left = 504.0
 offset_top = 128.0
 offset_right = 1480.0
@@ -120,6 +130,7 @@ text = "    I                	                                              Inve
 autowrap_trim_flags = 0
 
 [connection signal="pressed" from="Panel/VBoxContainer/Continue" to="." method="_on_continue_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/Save" to="." method="_on_save_pressed"]
 [connection signal="pressed" from="Panel/VBoxContainer/Settings" to="." method="_on_setting_pressed"]
 [connection signal="pressed" from="Panel/VBoxContainer/End" to="." method="_on_end_pressed"]
 [connection signal="changed" from="Panel2/Volume" to="." method="_on_volume_changed"]

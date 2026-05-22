@@ -3,6 +3,15 @@ public partial class SaveManager : Node
 {
     private const string SavePath = "user://save.json";
 
+    public override void _Ready()
+    {
+        GetTree().NodeRemoved += (node) => {
+            if(node.SceneFilePath != "" && (node) != this) {
+                SaveGame();
+            }
+        };
+    }
+
     public void SaveGame()
     {
         // vytvoří prázdné Godot pole pro uložení předmětů z inventáře

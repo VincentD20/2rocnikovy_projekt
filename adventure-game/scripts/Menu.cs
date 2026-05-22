@@ -11,6 +11,7 @@ public partial class Menu : CanvasLayer
 	private Button endButton;
 	private HSlider volumeSlider;
 	private Button backButton;
+	private Button saveButton;
 	public override void _Ready()
 	{
 		pausePanel = GetNode<Panel>("Panel");
@@ -20,6 +21,7 @@ public partial class Menu : CanvasLayer
 		endButton = GetNode<Button>("Panel/VBoxContainer/End");
 		volumeSlider = GetNode<HSlider>("Panel2/Volume");
 		backButton = GetNode<Button>("Panel2/Back");
+		saveButton = GetNode<Button>("Panel/VBoxContainer/Save");
 		pausePanel.Visible = false;
 		settingsPanel.Visible = false;
 		ProcessMode = ProcessModeEnum.Always;
@@ -69,5 +71,9 @@ public partial class Menu : CanvasLayer
 	private void _on_volume_changed(float value)
 	{
 		AudioServer.SetBusVolumeDb(0, Mathf.LinearToDb(value));
+	}
+
+	private void _on_save_pressed() {
+		GetNode<SaveManager>("/root/SaveManager").SaveGame();
 	}
 }

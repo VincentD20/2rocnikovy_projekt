@@ -39,8 +39,14 @@ alignment = 1
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 40
-text = "Hrát
+text = "New game
 "
+
+[node name="Button4" type="Button" parent="VBoxContainer" unique_id=16702236]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 40
+text = "Load"
 
 [node name="Button3" type="Button" parent="VBoxContainer" unique_id=1734611388]
 layout_mode = 2
@@ -57,5 +63,6 @@ text = "Konec
 "
 
 [connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_Hrat_pressed"]
+[connection signal="pressed" from="VBoxContainer/Button4" to="." method="_on_load_pressed"]
 [connection signal="pressed" from="VBoxContainer/Button3" to="." method="_on_button_nastaveni_pressed"]
 [connection signal="pressed" from="VBoxContainer/Button2" to="." method="_on_Konec_pressed"]

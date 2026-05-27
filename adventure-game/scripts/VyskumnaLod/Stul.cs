@@ -18,6 +18,7 @@ public partial class Stul : Area2D
 		if (@event is InputEventMouseButton mouseEvent && mouseEvent.Pressed)
 		{
 			var dialogManager = GetNode<DialogManager>("/root/DialogManager");
+			if (dialogManager.IsDialogVisible()) return; 
 
 			dialogManager?.ShowDialogSequence(new string[]
 			{

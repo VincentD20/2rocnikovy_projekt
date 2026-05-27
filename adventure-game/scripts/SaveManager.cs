@@ -15,6 +15,7 @@ public partial class SaveManager : Node
     public void SaveGame()
     {
         // vytvoří prázdné Godot pole pro uložení předmětů z inventáře
+        if (GetTree().CurrentScene == null) return; 
         var inventoryArray = new Godot.Collections.Array();
         // projde každý předmět v inventáři a přidá ho do pole
         foreach (var item in Inventory.Items)

@@ -1,6 +1,18 @@
 [gd_scene format=3 uid="uid://c0cvgmlbr8on2"]
 
 [ext_resource type="Texture2D" uid="uid://c7m6y528ulmh2" path="res://assets/Storage.png" id="1_1uuhw"]
+[ext_resource type="Script" uid="uid://cltahaloace2j" path="res://scripts/Storage/Box.cs" id="2_8l3eh"]
+[ext_resource type="Script" uid="uid://d20vt13okcgia" path="res://scripts/Storage/Robot2.cs" id="3_qnj6l"]
+[ext_resource type="Script" uid="uid://c8elgkbmbwfn0" path="res://scripts/Storage/Dvere2.cs" id="4_71j48"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5b4gs"]
+size = Vector2(436, 349)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pnpgp"]
+size = Vector2(416, 484)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h7i1d"]
+size = Vector2(247, 443.5)
 
 [node name="Storage" type="Node2D" unique_id=1360202054]
 
@@ -8,3 +20,51 @@
 offset_right = 1920.0
 offset_bottom = 1080.0
 texture = ExtResource("1_1uuhw")
+
+[node name="Box" type="Area2D" parent="." unique_id=1412342173]
+script = ExtResource("2_8l3eh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Box" unique_id=149085640]
+position = Vector2(964, 772.5)
+shape = SubResource("RectangleShape2D_5b4gs")
+
+[node name="Panel" type="Panel" parent="Box" unique_id=1934917486]
+offset_left = 640.0
+offset_top = 128.0
+offset_right = 1344.0
+offset_bottom = 960.0
+
+[node name="LineEdit" type="LineEdit" parent="Box/Panel" unique_id=584115346]
+layout_mode = 0
+offset_left = 128.0
+offset_top = 264.0
+offset_right = 576.0
+offset_bottom = 440.0
+
+[node name="Label" type="Label" parent="Box/Panel" unique_id=162234819]
+layout_mode = 0
+offset_left = 128.0
+offset_top = 88.0
+offset_right = 568.0
+offset_bottom = 200.0
+
+[node name="Button" type="Button" parent="Box/Panel" unique_id=1510758177]
+layout_mode = 0
+offset_left = 224.0
+offset_top = 528.0
+offset_right = 480.0
+offset_bottom = 624.0
+
+[node name="Robot" type="Area2D" parent="." unique_id=1429928759]
+script = ExtResource("3_qnj6l")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Robot" unique_id=470762116]
+position = Vector2(422, 755)
+shape = SubResource("RectangleShape2D_pnpgp")
+
+[node name="Dvere" type="Area2D" parent="." unique_id=1436595570]
+script = ExtResource("4_71j48")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Dvere" unique_id=68685473]
+position = Vector2(1534, 554.75)
+shape = SubResource("RectangleShape2D_h7i1d")

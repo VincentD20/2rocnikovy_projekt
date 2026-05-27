@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public partial class Alien : Area2D
+public partial class Robot2 : Area2D
 {
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
@@ -18,7 +18,7 @@ public partial class Alien : Area2D
 		if (@event is InputEventMouseButton mouseEvent && mouseEvent.Pressed)
 		{
 			var dialogManager = GetNode<DialogManager>("/root/DialogManager");
-			dialogManager?.ShowDialog("Hledáš ji? Ona hledá tebe.");
+			dialogManager?.ShowDialog("Ona se vrátí...");
 
 		}
 	}

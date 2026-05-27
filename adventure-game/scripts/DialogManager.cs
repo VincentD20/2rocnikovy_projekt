@@ -95,5 +95,10 @@ public partial class DialogManager : CanvasLayer
 
 	}
 
+	public bool IsDialogVisible()
+	{
+		return panel.Visible;
+	}
+
 
 }

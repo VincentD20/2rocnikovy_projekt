@@ -18,8 +18,13 @@ public partial class VyskumnaLod : Area2D
 	{
 		if (@event is InputEventMouseButton mouseEvent && mouseEvent.Pressed)
 		{
-			
-			GetTree().ChangeSceneToFile("res://scenes/VyskumnaLod.tscn");
+			var dialogManager = GetNode<DialogManager>("/root/DialogManager");
+			if (Inventory.HasItem("CardToResearchStation"))
+			{
+				GetTree().ChangeSceneToFile("res://scenes/VyskumnaLod.tscn");
+				return;
+			}
+			dialogManager?.ShowDialog("Vstup vyžaduje přístupovou kartu.");
 
 		}
 	}

@@ -16,9 +16,11 @@ public partial class VesmirnaPlocha : Area2D
 	{
 		if (@event is InputEventMouseButton mouseEvent && mouseEvent.Pressed)
 		{
-			if (Inventory.HasItem("Souradnice"))
+
+			if (Inventory.HasItem("VK-42-FREEDOM"))
 			{
 				GetTree().ChangeSceneToFile("res://scenes/VesmirnaPlocha.tscn");
+				return;
 			}
 		}
 	}

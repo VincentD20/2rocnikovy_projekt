@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public partial class Alien : Area2D
+public partial class Dvere2 : Area2D
 {
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
@@ -12,14 +12,13 @@ public partial class Alien : Area2D
 	public override void _Process(double delta)
 	{
 	}
-
 	public override void _InputEvent(Viewport viewport, InputEvent @event, int shapeIdx)
 	{
 		if (@event is InputEventMouseButton mouseEvent && mouseEvent.Pressed)
 		{
-			var dialogManager = GetNode<DialogManager>("/root/DialogManager");
-			dialogManager?.ShowDialog("Hledáš ji? Ona hledá tebe.");
 
+			GetTree().ChangeSceneToFile("res://scenes/VesmirnaStanice.tscn");
 		}
 	}
 }
+

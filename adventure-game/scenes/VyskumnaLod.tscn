@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://b3jp0v012lrji"]
 
 [ext_resource type="Texture2D" uid="uid://obsg0mapytym" path="res://assets/research_ship.png" id="1_6xlol"]
-[ext_resource type="Script" uid="uid://olmpjp2jdo85" path="res://scripts/VyskumnaLod/VyskumnaLod.cs" id="1_rtu5i"]
+[ext_resource type="Script" uid="uid://j1b3bqm1tuon" path="res://scripts/VyskumnaLod/Vyskumna_lod.cs" id="1_rtu5i"]
 [ext_resource type="Script" uid="uid://bsawiqr117kjj" path="res://scripts/VyskumnaLod/Tabule.cs" id="3_7j1o2"]
 [ext_resource type="Script" uid="uid://bsy25ectlw6rj" path="res://scripts/VyskumnaLod/Stul.cs" id="4_a3naf"]
 [ext_resource type="Script" uid="uid://43ufdsenxec4" path="res://scripts/VyskumnaLod/Pc.cs" id="5_fn5kw"]

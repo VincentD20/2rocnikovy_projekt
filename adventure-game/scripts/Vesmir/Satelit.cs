@@ -17,7 +17,13 @@ public partial class Satelit : Area2D
 		if (@event is InputEventMouseButton mouseEvent && mouseEvent.Pressed)
 		{
 			var dialogManager = GetNode<DialogManager>("/root/DialogManager");
-			dialogManager?.ShowDialog("...");
+			dialogManager?.ShowDialogSequence( new string[] {
+				"ZÁZNAM #4471 — SATELIT-9",
+				"Objekt č.42 mění kurz.",
+				"Nová trajektorie: Sektor 7, Vesmírná pláň.",
+				"Varování: Objekt se pohybuje... dobrovolně.",
+				"Konec záznamu."
+			});
 
 		}
 	}

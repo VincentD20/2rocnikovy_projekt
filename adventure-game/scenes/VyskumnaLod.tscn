@@ -1,3 +1,81 @@
 [gd_scene format=3 uid="uid://b3jp0v012lrji"]
 
+[ext_resource type="Texture2D" uid="uid://obsg0mapytym" path="res://assets/research_ship.png" id="1_6xlol"]
+[ext_resource type="Script" uid="uid://olmpjp2jdo85" path="res://scripts/VyskumnaLod/VyskumnaLod.cs" id="1_rtu5i"]
+[ext_resource type="Script" uid="uid://bsawiqr117kjj" path="res://scripts/VyskumnaLod/Tabule.cs" id="3_7j1o2"]
+[ext_resource type="Script" uid="uid://bsy25ectlw6rj" path="res://scripts/VyskumnaLod/Stul.cs" id="4_a3naf"]
+[ext_resource type="Script" uid="uid://43ufdsenxec4" path="res://scripts/VyskumnaLod/Pc.cs" id="5_fn5kw"]
+[ext_resource type="Script" uid="uid://d0wmio478hycw" path="res://scripts/VyskumnaLod/Dvere.cs" id="6_hwmle"]
+[ext_resource type="Script" uid="uid://begx2pcj51tgr" path="res://scripts/VyskumnaLod/Hologram.cs" id="7_kj0qh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mxjkd"]
+size = Vector2(405, 432)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4m65k"]
+size = Vector2(336.50302, 1109.5519)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x175k"]
+size = Vector2(240, 168)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_00g5i"]
+size = Vector2(293, 480)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2yiqa"]
+radius = 188.8451
+height = 688.0
+
 [node name="VyskumnaLod" type="Node2D" unique_id=1650111953]
+script = ExtResource("1_rtu5i")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1187003296]
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("1_6xlol")
+metadata/_edit_lock_ = true
+
+[node name="Tabule" type="Area2D" parent="." unique_id=1816473573]
+script = ExtResource("3_7j1o2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tabule" unique_id=823345423]
+position = Vector2(221.5, 512)
+shape = SubResource("RectangleShape2D_mxjkd")
+debug_color = Color(0.6106746, 0.4681973, 0.70981306, 0.41960785)
+
+[node name="Stul" type="Area2D" parent="." unique_id=968506804]
+script = ExtResource("4_a3naf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Stul" unique_id=782102389]
+position = Vector2(957.19977, 920.24097)
+rotation = 1.5717834
+shape = SubResource("RectangleShape2D_4m65k")
+debug_color = Color(0.50518215, 0.43726826, 0.9738347, 0.41960785)
+
+[node name="PC" type="Area2D" parent="." unique_id=497661323]
+script = ExtResource("5_fn5kw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PC" unique_id=221430020]
+position = Vector2(1184, 668)
+shape = SubResource("RectangleShape2D_x175k")
+debug_color = Color(0.46602172, 0.5920241, 7.70092e-07, 0.41960785)
+
+[node name="Dvere" type="Area2D" parent="." unique_id=1929416945]
+script = ExtResource("6_hwmle")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Dvere" unique_id=1578858228]
+position = Vector2(1640, 592)
+shape = SubResource("RectangleShape2D_00g5i")
+debug_color = Color(0, 0.6223101, 0.5498393, 0.41960785)
+
+[node name="Hologram" type="Area2D" parent="." unique_id=424086085]
+script = ExtResource("7_kj0qh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hologram" unique_id=561513384]
+position = Vector2(976, 384)
+rotation = 1.3000467
+shape = SubResource("CapsuleShape2D_2yiqa")
+
+[connection signal="input_event" from="Tabule" to="." method="_on_tabule_input_event"]
+[connection signal="input_event" from="Stul" to="." method="_on_stul_input_event"]
+[connection signal="input_event" from="PC" to="." method="_on_pc_input_event"]
+[connection signal="input_event" from="Dvere" to="." method="_on_dvere_input_event"]
+[connection signal="input_event" from="Hologram" to="." method="_on_hologram_input_event"]

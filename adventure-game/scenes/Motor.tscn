@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://bkp64loexia8v"]
+
+[ext_resource type="Texture2D" uid="uid://3d0kiy8qexo0" path="res://assets/engine.png" id="1_rsiuw"]
+
+[node name="Motor" type="Node2D" unique_id=575011392]
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1948989294]
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("1_rsiuw")

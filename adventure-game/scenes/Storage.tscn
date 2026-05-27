@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://c0cvgmlbr8on2"]
+
+[ext_resource type="Texture2D" uid="uid://c7m6y528ulmh2" path="res://assets/Storage.png" id="1_1uuhw"]
+
+[node name="Storage" type="Node2D" unique_id=1360202054]
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=2109193152]
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("1_1uuhw")

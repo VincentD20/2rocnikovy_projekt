@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://bkeqgqva6giva"]
+
+[ext_resource type="Texture2D" uid="uid://uijarhgobyr6" path="res://assets/asteroidBar.png" id="1_sac2r"]
+
+[node name="AsteroidBar" type="Node2D" unique_id=539826086]
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=2055708814]
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("1_sac2r")
+
+[node name="Mapa" type="Area2D" parent="." unique_id=2121597854]
+
+[node name="Alien" type="Area2D" parent="." unique_id=532183216]
+
+[node name="Bartender" type="Area2D" parent="." unique_id=626274758]

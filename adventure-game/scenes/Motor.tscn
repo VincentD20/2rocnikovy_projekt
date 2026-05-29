@@ -1,6 +1,22 @@
 [gd_scene format=3 uid="uid://bkp64loexia8v"]
 
 [ext_resource type="Texture2D" uid="uid://3d0kiy8qexo0" path="res://assets/engine.png" id="1_rsiuw"]
+[ext_resource type="Script" uid="uid://cjqx5hfg0rjhb" path="res://scripts/Motor/NotDoor.cs" id="2_036qy"]
+[ext_resource type="Script" uid="uid://u4vpc7t7fmxr" path="res://scripts/Motor/Vent.cs" id="3_86yla"]
+[ext_resource type="Script" uid="uid://csad2tplqiibm" path="res://scripts/Motor/Mechanik.cs" id="4_1hv1p"]
+[ext_resource type="Script" uid="uid://dhte4vg5l1ev3" path="res://scripts/Motor/NavigaceModul.cs" id="5_h00wm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ig3an"]
+size = Vector2(280, 526)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ce1ev"]
+size = Vector2(172, 545)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_djs3o"]
+size = Vector2(636.5, 345)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kmnox"]
+size = Vector2(332, 401)
 
 [node name="Motor" type="Node2D" unique_id=575011392]
 
@@ -8,3 +24,39 @@
 offset_right = 1920.0
 offset_bottom = 1080.0
 texture = ExtResource("1_rsiuw")
+
+[node name="NotDoor" type="Area2D" parent="." unique_id=884034221]
+script = ExtResource("2_036qy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NotDoor" unique_id=1844146129]
+position = Vector2(168, 696)
+shape = SubResource("RectangleShape2D_ig3an")
+debug_color = Color(0.67541045, 0.4606713, 0.57075614, 0.41960785)
+
+[node name="Vent" type="Area2D" parent="." unique_id=360875289]
+script = ExtResource("3_86yla")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Vent" unique_id=265353636]
+position = Vector2(1837, 646.5)
+shape = SubResource("RectangleShape2D_ce1ev")
+debug_color = Color(0.48431855, 0.45191407, 0.9606549, 0.41960785)
+
+[node name="Mechanik" type="Area2D" parent="." unique_id=1830512159]
+script = ExtResource("4_1hv1p")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Mechanik" unique_id=1644609454]
+position = Vector2(692.75, 744.5)
+shape = SubResource("RectangleShape2D_djs3o")
+debug_color = Color(0.8449474, 0.19242206, 0.8003142, 0.41960785)
+
+[node name="NavigaceModul" type="Area2D" parent="." unique_id=324276188]
+script = ExtResource("5_h00wm")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="NavigaceModul" unique_id=1104695179]
+position = Vector2(557, 362.5)
+shape = SubResource("RectangleShape2D_kmnox")
+
+[connection signal="input_event" from="NotDoor" to="NotDoor" method="_on_input_event"]
+[connection signal="input_event" from="Vent" to="NotDoor" method="_on_vent_input_event"]
+[connection signal="input_event" from="Mechanik" to="NotDoor" method="_on_mechanik_input_event"]
+[connection signal="input_event" from="NavigaceModul" to="NotDoor" method="_on_navigace_modul_input_event"]

@@ -20,11 +20,6 @@ public partial class MainMenu : Node2D
 		GetTree().ChangeSceneToFile("res://scenes/VesmirnaStanice.tscn");
 	}
 
-	private void _on_setting_pressed()
-	{
-		
-	}
-
 	private void _on_Konec_pressed()
 	{
 		GetTree().Quit();

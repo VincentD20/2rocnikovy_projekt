@@ -1,0 +1,17 @@
+C:\programovani\Godot\adventure-game\.godot\mono\temp\bin\Debug\Adventure_game.deps.json
+C:\programovani\Godot\adventure-game\.godot\mono\temp\bin\Debug\Adventure_game.runtimeconfig.json
+C:\programovani\Godot\adventure-game\.godot\mono\temp\bin\Debug\Adventure_game.dll
+C:\programovani\Godot\adventure-game\.godot\mono\temp\bin\Debug\Adventure_game.pdb
+C:\programovani\Godot\adventure-game\.godot\mono\temp\bin\Debug\GodotSharp.dll
+C:\programovani\Godot\adventure-game\.godot\mono\temp\bin\Debug\GodotSharpEditor.dll
+C:\programovani\Godot\adventure-game\.godot\mono\temp\obj\Debug\Adventure_game.csproj.AssemblyReference.cache
+C:\programovani\Godot\adventure-game\.godot\mono\temp\obj\Debug\Adventure_game.GeneratedMSBuildEditorConfig.editorconfig
+C:\programovani\Godot\adventure-game\.godot\mono\temp\obj\Debug\Adventure_game.AssemblyInfoInputs.cache
+C:\programovani\Godot\adventure-game\.godot\mono\temp\obj\Debug\Adventure_game.AssemblyInfo.cs
+C:\programovani\Godot\adventure-game\.godot\mono\temp\obj\Debug\Adventure_game.csproj.CoreCompileInputs.cache
+C:\programovani\Godot\adventure-game\.godot\mono\temp\obj\Debug\Adventur.6E816881.Up2Date
+C:\programovani\Godot\adventure-game\.godot\mono\temp\obj\Debug\Adventure_game.dll
+C:\programovani\Godot\adventure-game\.godot\mono\temp\obj\Debug\refint\Adventure_game.dll
+C:\programovani\Godot\adventure-game\.godot\mono\temp\obj\Debug\Adventure_game.pdb
+C:\programovani\Godot\adventure-game\.godot\mono\temp\obj\Debug\Adventure_game.genruntimeconfig.cache
+C:\programovani\Godot\adventure-game\.godot\mono\temp\obj\Debug\ref\Adventure_game.dll

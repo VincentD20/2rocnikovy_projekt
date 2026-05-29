@@ -1,6 +1,35 @@
 [gd_scene format=3 uid="uid://bol3h47awkxup"]
 
 [ext_resource type="Texture2D" uid="uid://cvkm4wo2dejqu" path="res://assets/cryo.png" id="1_wc27h"]
+[ext_resource type="Script" uid="uid://d0mqo8kfplgql" path="res://scripts/Cryo/Kapsule.cs" id="2_ihr2a"]
+[ext_resource type="Script" uid="uid://bnwmxpos0kmyr" path="res://scripts/Cryo/Karta.cs" id="3_jdjle"]
+[ext_resource type="Script" uid="uid://dtf335kylargg" path="res://scripts/Cryo/Pocitac1.cs" id="4_cqb70"]
+[ext_resource type="Script" uid="uid://wp53dh1fur3a" path="res://scripts/Cryo/Vent2.cs" id="5_fg44l"]
+[ext_resource type="Script" uid="uid://b3g4cyw44eyuk" path="res://scripts/Cryo/Mazivo.cs" id="6_eg6ik"]
+[ext_resource type="Script" uid="uid://ct378h0udm8wo" path="res://scripts/Cryo/Mikroskop.cs" id="7_j1sry"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0bxvo"]
+radius = 171.88751
+height = 493.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xju3g"]
+radius = 77.0
+height = 178.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ma6b1"]
+radius = 166.0
+height = 404.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x42rq"]
+size = Vector2(233.5, 112)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fsnaw"]
+radius = 57.0
+height = 172.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7kyf4"]
+radius = 77.0
+height = 196.0
 
 [node name="Kryokomora" type="Node2D" unique_id=916630112]
 
@@ -8,3 +37,64 @@
 offset_right = 1920.0
 offset_bottom = 1080.0
 texture = ExtResource("1_wc27h")
+
+[node name="Kapsule" type="Area2D" parent="." unique_id=288672654]
+script = ExtResource("2_ihr2a")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Kapsule" unique_id=780495027]
+position = Vector2(803.5, 565.5)
+rotation = -0.25830674
+shape = SubResource("CapsuleShape2D_0bxvo")
+debug_color = Color(0.25207093, 0.6137515, 0.47287488, 0.41960785)
+
+[node name="ColorRect" type="ColorRect" parent="Kapsule" unique_id=67505321]
+visible = false
+offset_right = 1936.0
+offset_bottom = 1080.0
+color = Color(0, 1, 1, 0.3137255)
+
+[node name="Karta" type="Area2D" parent="." unique_id=1509429939]
+script = ExtResource("3_jdjle")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Karta" unique_id=2023208385]
+position = Vector2(1613, 745)
+shape = SubResource("CapsuleShape2D_xju3g")
+debug_color = Color(0.58461785, 0.54861754, 0.12206767, 0.41960785)
+
+[node name="Pocitac" type="Area2D" parent="." unique_id=166524013]
+script = ExtResource("4_cqb70")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pocitac" unique_id=1688777825]
+position = Vector2(194, 714)
+shape = SubResource("CapsuleShape2D_ma6b1")
+debug_color = Color(0, 0.636544, 0.40750653, 0.41960785)
+
+[node name="Vent2" type="Area2D" parent="." unique_id=2067847105]
+script = ExtResource("5_fg44l")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Vent2" unique_id=1002921404]
+position = Vector2(1148, 665)
+shape = SubResource("RectangleShape2D_x42rq")
+debug_color = Color(0.81620514, 0.34298125, 0.57255954, 0.41960785)
+
+[node name="Mazivo" type="Area2D" parent="." unique_id=1920324169]
+script = ExtResource("6_eg6ik")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Mazivo" unique_id=894004810]
+position = Vector2(158, 398)
+shape = SubResource("CapsuleShape2D_fsnaw")
+debug_color = Color(0.75607955, 0.40889838, 0.53873014, 0.41960785)
+
+[node name="Mikroskop" type="Area2D" parent="." unique_id=511136844]
+script = ExtResource("7_j1sry")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Mikroskop" unique_id=1722937503]
+position = Vector2(523, 678)
+shape = SubResource("CapsuleShape2D_7kyf4")
+
+[connection signal="input_event" from="Kapsule" to="Kapsule" method="_on_input_event"]
+[connection signal="input_event" from="Karta" to="Kapsule" method="_on_karta_input_event"]
+[connection signal="input_event" from="Pocitac" to="Kapsule" method="_on_pocitac_input_event"]
+[connection signal="input_event" from="Vent2" to="Kapsule" method="_on_vent_2_input_event"]
+[connection signal="input_event" from="Mazivo" to="Kapsule" method="_on_mazivo_input_event"]
+[connection signal="input_event" from="Mikroskop" to="Kapsule" method="_on_mikroskop_input_event"]

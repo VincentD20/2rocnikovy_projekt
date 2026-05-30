@@ -1,8 +1,9 @@
+CollisionShape2D
+Area2D
+TextureRect
 Timer
 ColorRect
 Panel
-CollisionShape2D
-Area2D
 CanvasLayer
 Button
 Label

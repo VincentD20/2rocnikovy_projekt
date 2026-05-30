@@ -1,3 +1,62 @@
 [gd_scene format=3 uid="uid://dqv7hwily4x2s"]
 
+[ext_resource type="Texture2D" uid="uid://bh7llfu32cguq" path="res://assets/Sachta.png" id="1_0yvun"]
+[ext_resource type="Script" uid="uid://du27u27qdne80" path="res://scripts/Sachta/Kajuty.cs" id="2_15hhw"]
+[ext_resource type="Script" uid="uid://d4em53bilc6uw" path="res://scripts/Sachta/Strojovna.cs" id="3_85u5q"]
+[ext_resource type="Script" uid="uid://t1todg0we45i" path="res://scripts/Sachta/Kryokomora.cs" id="4_o6om7"]
+[ext_resource type="Script" uid="uid://hw2s16je20xh" path="res://scripts/Sachta/Exit1.cs" id="5_iugj0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gnivd"]
+size = Vector2(257, 714.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_upw6o"]
+size = Vector2(247.5, 686.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s83u8"]
+size = Vector2(376, 354)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mgw4h"]
+size = Vector2(1925, 157)
+
 [node name="Sachta" type="Node2D" unique_id=1539464480]
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1674599593]
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("1_0yvun")
+
+[node name="Kajuty" type="Area2D" parent="." unique_id=1082392996]
+script = ExtResource("2_15hhw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Kajuty" unique_id=479467987]
+position = Vector2(1354.5, 534.75)
+shape = SubResource("RectangleShape2D_gnivd")
+debug_color = Color(0.85084826, 0.30815533, 0.5451857, 0.41960785)
+
+[node name="Strojovna" type="Area2D" parent="." unique_id=2081885598]
+script = ExtResource("3_85u5q")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Strojovna" unique_id=2121517567]
+position = Vector2(561.25, 540.75)
+shape = SubResource("RectangleShape2D_upw6o")
+debug_color = Color(0.4860909, 0.5700692, 0.38930103, 0.41960785)
+
+[node name="Kryokomora" type="Area2D" parent="." unique_id=1493917804]
+script = ExtResource("4_o6om7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Kryokomora" unique_id=497587161]
+position = Vector2(961, 530)
+shape = SubResource("RectangleShape2D_s83u8")
+debug_color = Color(0.6267987, 0.51417255, 0.3819779, 0.41960785)
+
+[node name="Exit1" type="Area2D" parent="." unique_id=1891068021]
+script = ExtResource("5_iugj0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Exit1" unique_id=1822822030]
+position = Vector2(959.5, 1053)
+shape = SubResource("RectangleShape2D_mgw4h")
+
+[connection signal="input_event" from="Kajuty" to="Kajuty" method="_on_input_event"]
+[connection signal="input_event" from="Strojovna" to="Kajuty" method="_on_strojovna_input_event"]
+[connection signal="input_event" from="Kryokomora" to="Kajuty" method="_on_kryokomora_input_event"]
+[connection signal="input_event" from="Exit1" to="Kajuty" method="_on_exit_1_input_event"]

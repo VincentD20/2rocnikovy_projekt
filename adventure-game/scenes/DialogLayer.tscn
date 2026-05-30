@@ -7,18 +7,23 @@
 script = ExtResource("1_ci38l")
 
 [node name="Panel" type="Panel" parent="." unique_id=87400498]
+anchors_preset = -1
+anchor_left = -0.041666668
+anchor_right = 0.025
 offset_left = 528.0
 offset_top = 872.0
 offset_right = 1424.0
 offset_bottom = 1028.0
+metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="Panel" unique_id=352589919]
 layout_mode = 0
-offset_right = 897.0
+offset_right = 1024.0
 offset_bottom = 157.0
 theme_override_font_sizes/font_size = 30
 text = "..."
 horizontal_alignment = 1
+clip_text = true
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=915931913]
 stream = ExtResource("2_h3pdl")

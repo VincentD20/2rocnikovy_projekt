@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "+d3EBykinEA=",
+  "dgSpecHash": "t8WEU8vGHAM=",
   "success": true,
-  "projectFilePath": "C:\\programovani\\Godot\\adventure-game\\Adventure_game.csproj",
+  "projectFilePath": "C:\\programovani\\Godot\\2rocnikovy_projekt\\adventure-game\\Adventure_game.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\dell\\.nuget\\packages\\godot.sourcegenerators\\4.6.2\\godot.sourcegenerators.4.6.2.nupkg.sha512",
     "C:\\Users\\dell\\.nuget\\packages\\godotsharp\\4.6.2\\godotsharp.4.6.2.nupkg.sha512",

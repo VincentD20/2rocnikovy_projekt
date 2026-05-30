@@ -30,6 +30,7 @@ position = Vector2(964, 772.5)
 shape = SubResource("RectangleShape2D_5b4gs")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="Box" unique_id=1815932542]
+visible = false
 
 [node name="Panel" type="Panel" parent="Box/CanvasLayer" unique_id=1934917486]
 offset_left = 640.0

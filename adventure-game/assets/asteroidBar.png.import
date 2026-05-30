@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://uijarhgobyr6"
-path="res://.godot/imported/asteroidBar.png-a4501765fba02fa722da4c1195ae8440.ctex"
+uid="uid://bndi2cmrq2wa5"
+path="res://.godot/imported/AsteroidBar.png-af1981ded5a2d178173751da48124734.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/asteroidBar.png"
-dest_files=["res://.godot/imported/asteroidBar.png-a4501765fba02fa722da4c1195ae8440.ctex"]
+source_file="res://assets/AsteroidBar.png"
+dest_files=["res://.godot/imported/AsteroidBar.png-af1981ded5a2d178173751da48124734.ctex"]
 
 [params]
 

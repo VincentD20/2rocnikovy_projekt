@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\programovani\\Godot\\adventure-game\\Adventure_game.csproj": {}
+    "C:\\programovani\\Godot\\2rocnikovy_projekt\\adventure-game\\Adventure_game.csproj": {}
   },
   "projects": {
-    "C:\\programovani\\Godot\\adventure-game\\Adventure_game.csproj": {
+    "C:\\programovani\\Godot\\2rocnikovy_projekt\\adventure-game\\Adventure_game.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\programovani\\Godot\\adventure-game\\Adventure_game.csproj",
+        "projectUniqueName": "C:\\programovani\\Godot\\2rocnikovy_projekt\\adventure-game\\Adventure_game.csproj",
         "projectName": "Adventure_game",
-        "projectPath": "C:\\programovani\\Godot\\adventure-game\\Adventure_game.csproj",
+        "projectPath": "C:\\programovani\\Godot\\2rocnikovy_projekt\\adventure-game\\Adventure_game.csproj",
         "packagesPath": "C:\\Users\\dell\\.nuget\\packages\\",
-        "outputPath": "C:\\programovani\\Godot\\adventure-game\\.godot\\mono\\temp\\obj\\",
+        "outputPath": "C:\\programovani\\Godot\\2rocnikovy_projekt\\adventure-game\\.godot\\mono\\temp\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

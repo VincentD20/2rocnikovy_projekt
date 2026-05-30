@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://osrcjhnpf4ec"
-path="res://.godot/imported/AsteroidBar.jpg-15b0403de394b1e04a5c656b5caaea86.ctex"
+uid="uid://bh7llfu32cguq"
+path="res://.godot/imported/Sachta.png-cae33ea7c14433b4a0b93351f8c962d9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/AsteroidBar.jpg"
-dest_files=["res://.godot/imported/AsteroidBar.jpg-15b0403de394b1e04a5c656b5caaea86.ctex"]
+source_file="res://assets/Sachta.png"
+dest_files=["res://.godot/imported/Sachta.png-cae33ea7c14433b4a0b93351f8c962d9.ctex"]
 
 [params]
 

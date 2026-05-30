@@ -1,16 +1,97 @@
 [gd_scene format=3 uid="uid://bkeqgqva6giva"]
 
-[ext_resource type="Texture2D" uid="uid://uijarhgobyr6" path="res://assets/asteroidBar.png" id="1_sac2r"]
+[ext_resource type="Texture2D" uid="uid://bndi2cmrq2wa5" path="res://assets/AsteroidBar.png" id="1_vyrey"]
+[ext_resource type="Script" uid="uid://la4h2kbr5smx" path="res://scripts/Bar/Mapa.cs" id="2_mh4cg"]
+[ext_resource type="Script" uid="uid://dmak1yun6k73a" path="res://scripts/Bar/Alien1.cs" id="3_4xkrq"]
+[ext_resource type="Script" uid="uid://d0by0u8ve2rrd" path="res://scripts/Bar/Bartender.cs" id="4_3be2e"]
+[ext_resource type="Script" uid="uid://bflnefw8y7s2p" path="res://scripts/Bar/Tablet.cs" id="5_j1esn"]
+[ext_resource type="Script" uid="uid://byxn1oppfi7ui" path="res://scripts/Bar/AlienDvere.cs" id="6_igqcn"]
+[ext_resource type="Script" uid="uid://cxras4ce8bsou" path="res://scripts/Bar/Exit.cs" id="7_qkwa4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3f5ji"]
+size = Vector2(272.5, 173.5)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_70qw1"]
+radius = 68.917725
+height = 319.38928
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_r0aga"]
+radius = 111.0
+height = 378.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_l1jw8"]
+radius = 101.0
+height = 274.24286
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wk510"]
+radius = 49.0
+height = 138.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2bacm"]
+radius = 50.0
+height = 216.0
 
 [node name="AsteroidBar" type="Node2D" unique_id=539826086]
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=2055708814]
 offset_right = 1920.0
 offset_bottom = 1080.0
-texture = ExtResource("1_sac2r")
+texture = ExtResource("1_vyrey")
 
 [node name="Mapa" type="Area2D" parent="." unique_id=2121597854]
+script = ExtResource("2_mh4cg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Mapa" unique_id=1869228767]
+position = Vector2(1534, 366)
+rotation = -0.020076698
+shape = SubResource("RectangleShape2D_3f5ji")
 
 [node name="Alien" type="Area2D" parent="." unique_id=532183216]
+script = ExtResource("3_4xkrq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Alien" unique_id=487827690]
+position = Vector2(1499, 533.00006)
+rotation = -1.5645612
+shape = SubResource("CapsuleShape2D_70qw1")
+debug_color = Color(3.2247603e-06, 0.6269269, 0.5096195, 0.41960785)
 
 [node name="Bartender" type="Area2D" parent="." unique_id=626274758]
+script = ExtResource("4_3be2e")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bartender" unique_id=136873259]
+position = Vector2(819, 507)
+shape = SubResource("CapsuleShape2D_r0aga")
+debug_color = Color(0.7954446, 0.36311996, 0.5804348, 0.41960785)
+
+[node name="Tablet" type="Area2D" parent="." unique_id=8146972]
+script = ExtResource("5_j1esn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tablet" unique_id=379071470]
+position = Vector2(230, 592.00006)
+rotation = 1.552862
+shape = SubResource("CapsuleShape2D_l1jw8")
+debug_color = Color(0.4828171, 0.5236426, 0.71496135, 0.41960785)
+
+[node name="AlienDvere" type="Area2D" parent="." unique_id=513267900]
+script = ExtResource("6_igqcn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AlienDvere" unique_id=1103126095]
+position = Vector2(277, 756)
+rotation = 4.435277
+shape = SubResource("CapsuleShape2D_wk510")
+debug_color = Color(2.2140146e-06, 0.64703304, 0.22993538, 0.41960785)
+
+[node name="Exit" type="Area2D" parent="." unique_id=587702993]
+script = ExtResource("7_qkwa4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Exit" unique_id=1546407272]
+position = Vector2(422, 454)
+shape = SubResource("CapsuleShape2D_2bacm")
+debug_color = Color(0.5441348, 0.5615356, 0.21250248, 0.41960785)
+
+[connection signal="input_event" from="Mapa" to="Mapa" method="_on_input_event"]
+[connection signal="input_event" from="Alien" to="Mapa" method="_on_alien_input_event"]
+[connection signal="input_event" from="Bartender" to="Mapa" method="_on_bartender_input_event"]
+[connection signal="input_event" from="Tablet" to="Mapa" method="_on_tablet_input_event"]
+[connection signal="input_event" from="AlienDvere" to="Mapa" method="_on_alien_dvere_input_event"]
+[connection signal="input_event" from="Exit" to="Mapa" method="_on_exit_input_event"]

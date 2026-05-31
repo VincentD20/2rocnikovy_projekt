@@ -18,8 +18,8 @@ public partial class CernaDira : Area2D
 		if (@event is InputEventMouseButton mouseEvent && mouseEvent.Pressed)
 		{
 			var dialogManager = GetNode<DialogManager>("/root/DialogManager");
-			GameState.RegisterClick("AlienDvere");
-			int clicks = GameState.GetClickCount("AlienDvere");
+			GameState.RegisterClick("CernaDira");
+			int clicks = GameState.GetClickCount("CernaDira");
 			if (!Inventory.HasItem("Vstup"))
 			{
 				dialogManager?.ShowDialog("Napřed si promluv s doktorem.");

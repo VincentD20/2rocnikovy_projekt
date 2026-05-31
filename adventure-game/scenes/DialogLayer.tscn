@@ -8,8 +8,10 @@ script = ExtResource("1_ci38l")
 
 [node name="Panel" type="Panel" parent="." unique_id=87400498]
 anchors_preset = -1
-anchor_left = -0.041666668
-anchor_right = 0.025
+anchor_left = -0.108333334
+anchor_top = 0.05185185
+anchor_right = 0.09166667
+anchor_bottom = 0.011111111
 offset_left = 528.0
 offset_top = 872.0
 offset_right = 1424.0
@@ -18,8 +20,9 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="Panel" unique_id=352589919]
 layout_mode = 0
-offset_right = 1024.0
-offset_bottom = 157.0
+offset_left = 8.0
+offset_right = 1280.0
+offset_bottom = 112.0
 theme_override_font_sizes/font_size = 30
 text = "..."
 horizontal_alignment = 1

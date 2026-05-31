@@ -1,5 +1,7 @@
 using Godot;
 using System.Collections.Generic;
+using System;
+
 
 public partial class DialogManager : CanvasLayer
 {
@@ -10,6 +12,7 @@ public partial class DialogManager : CanvasLayer
 	
 	private string fullText = "";
 	private int currentIndex = 0;
+	private Action onDialogFinished = null;
 
 	private Queue<string> dialogQueue = new Queue<string>();
 
@@ -25,7 +28,10 @@ public partial class DialogManager : CanvasLayer
 
 		GetTree().NodeRemoved += (node) => {
 			if (node.SceneFilePath != "" && node != this)
+			{
+				onDialogFinished = null; // add this line
 				HideDialog();
+			}
 		};
 	}
 
@@ -63,6 +69,12 @@ public partial class DialogManager : CanvasLayer
 	{
 		panel.Visible = false;
 		timer.Stop();
+		if (onDialogFinished != null)
+		{
+			var callback = onDialogFinished;
+			onDialogFinished = null;
+			callback();
+		}
 	}
 
 	public override void _Input(InputEvent @event)
@@ -100,5 +112,10 @@ public partial class DialogManager : CanvasLayer
 		return panel.Visible;
 	}
 
+	public void ShowDialogSequenceWithCallback(string[] lines, Action callback)
+	{
+		onDialogFinished = callback;
+		ShowDialogSequence(lines);
+	}
 
 }

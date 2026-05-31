@@ -7,7 +7,7 @@ public partial class MainMenu : Node2D
 	private Button loadButton;
 	public override void _Ready()
 	{
-		loadButton = GetNode<Button>("VBoxContainer/Load");
+		loadButton = GetNode<Button>("VBoxContainer/Button4");
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.

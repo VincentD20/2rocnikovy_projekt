@@ -1,3 +1,80 @@
 [gd_scene format=3 uid="uid://bgx7j2gp3c564"]
 
+[ext_resource type="Texture2D" uid="uid://drp30xuk11f67" path="res://assets/Velin.png" id="1_gyo2x"]
+[ext_resource type="Script" uid="uid://bq64tf1xjv35f" path="res://scripts/Velin/DvereK.cs" id="2_o0fp4"]
+[ext_resource type="Script" uid="uid://cvgdj0n0jxlmq" path="res://scripts/Velin/Zprava.cs" id="3_ly3cl"]
+[ext_resource type="Script" uid="uid://k318m3unbrgp" path="res://scripts/Velin/Navigace1.cs" id="4_g1o5a"]
+[ext_resource type="Script" uid="uid://rfpjwdtjtkpm" path="res://scripts/Velin/NavPc.cs" id="5_1csdl"]
+[ext_resource type="Script" uid="uid://cowsryx5bjnun" path="res://scripts/Velin/ExitBack.cs" id="6_i4dsw"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_demkb"]
+radius = 132.0
+height = 514.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_tlk5p"]
+radius = 258.6565
+height = 521.26904
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_tm0hr"]
+radius = 196.0
+height = 420.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_h67fn"]
+radius = 221.0
+height = 1144.1053
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dl2iq"]
+radius = 118.0
+height = 1080.0
+
 [node name="Velin" type="Node2D" unique_id=2078515005]
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1829535615]
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("1_gyo2x")
+
+[node name="DvereK" type="Area2D" parent="." unique_id=2007874652]
+script = ExtResource("2_o0fp4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DvereK" unique_id=319319272]
+position = Vector2(1661, 587)
+shape = SubResource("CapsuleShape2D_demkb")
+
+[node name="Zprava" type="Area2D" parent="." unique_id=1667739343]
+script = ExtResource("3_ly3cl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Zprava" unique_id=1391048886]
+position = Vector2(1350.0001, 910.9999)
+rotation = -0.14869875
+scale = Vector2(0.9999999, 0.9999999)
+shape = SubResource("CapsuleShape2D_tlk5p")
+
+[node name="Navigace" type="Area2D" parent="." unique_id=771307197]
+script = ExtResource("4_g1o5a")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Navigace" unique_id=751258831]
+position = Vector2(723, 196.00002)
+rotation = 1.6671348
+shape = SubResource("CapsuleShape2D_tm0hr")
+
+[node name="NavPc" type="Area2D" parent="." unique_id=1718540806]
+script = ExtResource("5_1csdl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NavPc" unique_id=286362611]
+position = Vector2(616, 676)
+rotation = 1.5314672
+shape = SubResource("CapsuleShape2D_h67fn")
+
+[node name="ExitBack" type="Area2D" parent="." unique_id=1013496789]
+script = ExtResource("6_i4dsw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ExitBack" unique_id=1781824617]
+position = Vector2(1897, 653)
+shape = SubResource("CapsuleShape2D_dl2iq")
+
+[connection signal="input_event" from="DvereK" to="DvereK" method="_on_input_event"]
+[connection signal="input_event" from="Zprava" to="DvereK" method="_on_zprava_input_event"]
+[connection signal="input_event" from="Navigace" to="DvereK" method="_on_navigace_input_event"]
+[connection signal="input_event" from="NavPc" to="DvereK" method="_on_nav_pc_input_event"]
+[connection signal="input_event" from="ExitBack" to="DvereK" method="_on_exit_back_input_event"]

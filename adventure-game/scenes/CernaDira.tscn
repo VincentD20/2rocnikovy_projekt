@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://bxq38bl1bmpwh"]
+
+[ext_resource type="Texture2D" uid="uid://igonpuih2u5k" path="res://assets/CernaDira.png" id="1_u6bg8"]
+[ext_resource type="Script" uid="uid://bbinxoxuf86tr" path="res://scripts/KonecDira.cs" id="2_qy7ix"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qy7ix"]
+size = Vector2(1928, 1102)
+
+[node name="CernaDira" type="Node2D" unique_id=748013302]
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=608928850]
+offset_right = 1919.0
+offset_bottom = 1085.0
+texture = ExtResource("1_u6bg8")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1199774150]
+script = ExtResource("2_qy7ix")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1655482106]
+position = Vector2(954, 541)
+shape = SubResource("RectangleShape2D_qy7ix")
+
+[connection signal="input_event" from="Area2D" to="Area2D" method="_on_input_event"]

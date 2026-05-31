@@ -1,3 +1,67 @@
 [gd_scene format=3 uid="uid://cv5knova5pag5"]
 
+[ext_resource type="Texture2D" uid="uid://bvhuk2jl0nbgt" path="res://assets/Kajuty.png" id="1_ftnck"]
+[ext_resource type="Script" uid="uid://p6r252a1fft5" path="res://scripts/Kajuty/Zachod.cs" id="2_ahcgj"]
+[ext_resource type="Script" uid="uid://cu7boldosatn8" path="res://scripts/Kajuty/Velin1.cs" id="3_wbwds"]
+[ext_resource type="Script" uid="uid://bb2qnb0vgdr1o" path="res://scripts/Kajuty/Vent3.cs" id="4_fs466"]
+[ext_resource type="Script" uid="uid://b0jewmfhe24g1" path="res://scripts/Kajuty/Decoder.cs" id="5_htxfe"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5hvlw"]
+radius = 77.0
+height = 544.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kagel"]
+radius = 69.0
+height = 592.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_f7n6s"]
+radius = 106.0
+height = 212.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_tmute"]
+radius = 56.0
+height = 122.0
+
 [node name="Kajuty" type="Node2D" unique_id=103979971]
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1720290597]
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("1_ftnck")
+
+[node name="Zachod" type="Area2D" parent="." unique_id=482254250]
+script = ExtResource("2_ahcgj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Zachod" unique_id=1132797210]
+position = Vector2(1454, 566)
+shape = SubResource("CapsuleShape2D_5hvlw")
+
+[node name="Velin" type="Area2D" parent="." unique_id=324643493]
+script = ExtResource("3_wbwds")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Velin" unique_id=248204254]
+position = Vector2(527, 549)
+shape = SubResource("CapsuleShape2D_kagel")
+debug_color = Color(0.6506226, 0.4791938, 0.5499637, 0.41960785)
+
+[node name="Vent3" type="Area2D" parent="." unique_id=854591654]
+script = ExtResource("4_fs466")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Vent3" unique_id=96739745]
+position = Vector2(1267, 313)
+shape = SubResource("CapsuleShape2D_f7n6s")
+debug_color = Color(1.540184e-06, 0.5648068, 0.8694642, 0.41960785)
+
+[node name="Decoder" type="Area2D" parent="." unique_id=1074626589]
+position = Vector2(-9, 4)
+script = ExtResource("5_htxfe")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Decoder" unique_id=275833704]
+position = Vector2(694, 560)
+shape = SubResource("CapsuleShape2D_tmute")
+debug_color = Color(0.95688933, 0, 0.5381171, 0.41960785)
+
+[connection signal="input_event" from="Zachod" to="Zachod" method="_on_input_event"]
+[connection signal="input_event" from="Velin" to="Zachod" method="_on_velin_input_event"]
+[connection signal="input_event" from="Vent3" to="Zachod" method="_on_vent_2_input_event"]
+[connection signal="input_event" from="Decoder" to="Zachod" method="_on_decoder_input_event"]

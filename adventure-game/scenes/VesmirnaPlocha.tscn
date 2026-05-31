@@ -1,0 +1,65 @@
+[gd_scene format=3 uid="uid://b5xsa6n8cyps3"]
+
+[ext_resource type="Texture2D" uid="uid://b1bfnxs4jker2" path="res://assets/VesmirnaPlocha.png" id="1_dmhrm"]
+[ext_resource type="Script" uid="uid://drb3t11dtrkj3" path="res://scripts/VesmirnaPlocha/Vesmir2.cs" id="2_b8b1f"]
+[ext_resource type="Script" uid="uid://bltcl234j5hec" path="res://scripts/VesmirnaPlocha/Lod2.cs" id="3_f3vx3"]
+[ext_resource type="Script" uid="uid://ckqb8qvithf3b" path="res://scripts/VesmirnaPlocha/Unit.cs" id="4_kmgv6"]
+[ext_resource type="Script" uid="uid://cu30mf80vwwx2" path="res://scripts/VesmirnaPlocha/CernaDira.cs" id="5_28wlb"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_a5dyx"]
+radius = 188.0
+height = 708.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_yq0r3"]
+radius = 124.0
+height = 320.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_x2hxj"]
+radius = 61.0
+height = 234.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ikox3"]
+radius = 317.66528
+height = 912.53
+
+[node name="VesmirnaPlan" type="Node2D" unique_id=1960185714]
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=796725196]
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("1_dmhrm")
+
+[node name="Vesmir" type="Area2D" parent="." unique_id=306546683]
+script = ExtResource("2_b8b1f")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Vesmir" unique_id=1638335770]
+position = Vector2(30, 555)
+shape = SubResource("CapsuleShape2D_a5dyx")
+
+[node name="Lod" type="Area2D" parent="." unique_id=1627705950]
+script = ExtResource("3_f3vx3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Lod" unique_id=1333921507]
+position = Vector2(956, 516)
+shape = SubResource("CapsuleShape2D_yq0r3")
+
+[node name="Unit" type="Area2D" parent="." unique_id=22951936]
+script = ExtResource("4_kmgv6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Unit" unique_id=1305186187]
+position = Vector2(591, 331)
+shape = SubResource("CapsuleShape2D_x2hxj")
+
+[node name="CernaDira" type="Area2D" parent="." unique_id=2090395726]
+position = Vector2(-193, -157)
+script = ExtResource("5_28wlb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CernaDira" unique_id=1622806855]
+position = Vector2(2043, 669.99994)
+rotation = -3.1626024
+shape = SubResource("CapsuleShape2D_ikox3")
+
+[connection signal="input_event" from="Vesmir" to="Vesmir" method="_on_input_event"]
+[connection signal="input_event" from="Lod" to="Vesmir" method="_on_lod_input_event"]
+[connection signal="input_event" from="Unit" to="Vesmir" method="_on_unit_input_event"]
+[connection signal="input_event" from="CernaDira" to="Vesmir" method="_on_cerna_dira_input_event"]

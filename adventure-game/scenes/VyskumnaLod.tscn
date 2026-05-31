@@ -11,7 +11,7 @@
 size = Vector2(405, 432)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4m65k"]
-size = Vector2(336.50302, 1109.5519)
+size = Vector2(172.99995, 1109.5519)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x175k"]
 size = Vector2(240, 168)
@@ -43,7 +43,7 @@ debug_color = Color(0.6106746, 0.4681973, 0.70981306, 0.41960785)
 script = ExtResource("4_a3naf")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Stul" unique_id=782102389]
-position = Vector2(957.19977, 920.24097)
+position = Vector2(957.30414, 814.4825)
 rotation = 1.5717834
 shape = SubResource("RectangleShape2D_4m65k")
 debug_color = Color(0.50518215, 0.43726826, 0.9738347, 0.41960785)

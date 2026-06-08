@@ -45,9 +45,9 @@ Klasická point-and-click adventura. Klikej na objekty a postavy, sbírej předm
 ## Řetězec akcí
 
 1. **Vesmírná stanice** → mince z automatu → stánkář chce Galaktický čaj
-2. **Asteroid Bar** → koupíš čaj za minci (vyhraješ vtipem u barmana)
+2. **Asteroid Bar** → koupíš čaj za minci (vyhraješ vtipem u barmana) + najdeš druhou část kombinace pro bednu č.42
 3. **Vesmírná stanice** → vrátíš se ke stánkáři s čajem → dostaneš kartu → otevřeš fialové dveře
-4. **Storage** → bedna č.42 je zamčená → potřebuješ kombinaci ze Šachty
+4. **Storage** → bedna č.42 je zamčená → potřebuješ kombinaci ze Šachty a z Baru
 5. **Šachta** → najdeš kombinaci na stěně → vrátíš se do Storage → otevřeš bednu → holografický záznam
 6. **Velín** → šifrovaná zpráva → potřebuješ dekodér
 7. **Kajuty** → najdeš dekodér → je rozbitý → potřebuješ náhradní díl ze Strojovny
@@ -70,7 +70,7 @@ Klasická point-and-click adventura. Klikej na objekty a postavy, sbírej předm
 | Mince | Automat na Vesmírné stanici |
 | Galaktický čaj | Asteroid Bar |
 | Karta | Stánkář na Vesmírné stanici |
-| Kombinace | Šachta |
+| Kombinace (není to item)| Šachta, Asteroid Bar|
 | Mazivo | Kryogenická komora |
 | Náhradní díl | Strojovna |
 | Karta do Výskumné stanice | Kryogenická komora |

@@ -82,9 +82,9 @@ Klasická point-and-click adventura. Klikej na objekty a postavy, sbírej předm
 ## Technologie
 
 - **Engine:** Godot 4.x s C# (Mono)
-- **Renderer:** Compatibility
-- **Rozlišení:** 1920×1080 (Full HD)
+- **Code:** Visual Studio Code
 - **Jazyk:** C#
+- **Claude AI:** Brainstorming + pomoc při tvorbě kódu
 
 ---
 
